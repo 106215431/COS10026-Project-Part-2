@@ -10,9 +10,6 @@ last modified: 29/09/2025
 
 */
 
-
-* {font-family: calibri, sans-serif; color:black}
-
 body {
   font-family: Arial, sans-serif;
   margin: 30px;
@@ -84,4 +81,83 @@ button {
 
 button:hover {
   background-color: #004999;
+}
+body {
+  margin: 0; /* remove default margin */
+  padding-top: 60px; /* add space equal to navbar height */
+}
+.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #c40000; /* red */
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    /* Logo */
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo span {
+      margin-left: 8px;
+    }
+
+    /* Navbar links */
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin: 0 10px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #730101; /* darker red on hover */
+    }
+.navbar a {
+    color: white;
+}
+/* footer */
+.footer{
+    background-color: #c40000;
+    color: white;
+    padding: 10px;
+}
+/* Table in about */
+table{
+    border: 3px solid black;
+    border-collapse: collapse; /* makes single border instead of double */
+    padding: 8px;
+}
+thead th{
+  border: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+tr td{
+  border: 2px solid black;
+    padding: 8px;
+    text-align: center;
 }
