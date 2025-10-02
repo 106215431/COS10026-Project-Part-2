@@ -12,3 +12,76 @@ last modified: 29/09/2025
 
 
 * {font-family: calibri, sans-serif; color:black}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background: #f9f9f9;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+label {
+  font-weight: bold;
+  margin-top: 5px;
+  align-self: center;
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+fieldset {
+  grid-column: span 2;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+legend {
+  font-weight: bold;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+button {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004999;
+}

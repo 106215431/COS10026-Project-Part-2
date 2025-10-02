@@ -4,12 +4,11 @@
         <meta charset="utf-8">
         <meta name="description" content="Job listing website">
         <meta name="keywords" content="HTML5, Jobs, Unlimited Money Limited">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="/styles/styles.css">
         <title>Unlimited Money Limited</title>
     </head>
-    <body>
-        <header>
-            <h1>Job Applications</h1>
+    <header>
+            <h1>About Us</h1>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="jobs.html">Job Listings</a>
@@ -18,5 +17,94 @@
             </nav>
             <hr/>
         </header>
-    </body>
+    <h2 style="text-align:center;">Job Application Form</h2>
+
+  <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" novalidate>
+    <label for="jobRef">Job Reference Number:</label>
+    <select id="jobRef" name="jobRef" required>
+      <option value="" disabled selected>Select Job</option>
+      <option value="REF001">TITO01</option>
+      <option value="REF002">TITO02</option>
+      <option value="REF003">TITO03</option>
+    </select>
+
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" maxlength="20" pattern="[A-Za-z]{1,20}" required>
+
+ 
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" maxlength="20" pattern="[A-Za-z]{1,20}" required>
+
+
+    <label for="dob">Date of Birth (dd/mm/yyyy):</label>
+    <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" 
+           pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$" required>
+
+
+    <fieldset>
+      <legend>Gender</legend>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+    </fieldset>
+
+
+    <label for="address">Street Address:</label>
+    <input type="text" id="address" name="address" maxlength="40" required>
+
+  
+    <label for="suburb">Suburb/Town:</label>
+    <input type="text" id="suburb" name="suburb" maxlength="40" required>
+
+  
+    <label for="state">State:</label>
+    <select id="state" name="state" required>
+      <option value="" disabled selected>Select State</option>
+      <option value="VIC">VIC</option>
+      <option value="NSW">NSW</option>
+      <option value="QLD">QLD</option>
+      <option value="NT">NT</option>
+      <option value="WA">WA</option>
+      <option value="SA">SA</option>
+      <option value="TAS">TAS</option>
+      <option value="ACT">ACT</option>
+    </select>
+
+    
+    <label for="postcode">Postcode:</label>
+    <input type="text" id="postcode" name="postcode" pattern="^\d{4}$" maxlength="4" required>
+
+   
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" 
+           pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$" required>
+
+ 
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="^[0-9 ]{8,12}$" required>
+
+
+    <fieldset>
+      <legend>Technical Skills</legend>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="skills[]" value="Networking" required> Networking</label>
+        <label><input type="checkbox" name="skills[]" value="Cybersecurity"> Cybersecurity</label>
+        <label><input type="checkbox" name="skills[]" value="Programming"> Programming</label>
+        <label><input type="checkbox" name="skills[]" value="Database"> Database</label>
+      </div>
+    </fieldset>
+
+
+    <label for="otherSkills">Other Skills:</label>
+    <textarea id="otherSkills" name="otherSkills" maxlength="200"></textarea>
+
+  
+    <div class="submit-btn">
+      <button type="submit">Apply</button>
+    </div>
+  </form>
+</body>
 </html>
