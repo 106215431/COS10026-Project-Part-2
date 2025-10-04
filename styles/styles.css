@@ -11,7 +11,7 @@ last modified: 29/09/2025
 */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family:  Arial, sans-serif;
   margin: 30px;
   background: #f9f9f9;
 }
@@ -160,4 +160,31 @@ tr td{
   border: 2px solid black;
     padding: 8px;
     text-align: center;
+}
+.stu-images{
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+.members-list{
+  display: flex;
+  gap: 10px;
+}
+#group-photo{
+  width: 600px;
+  height: 350px;
+}
+.group-photo{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+#group-photo-cap{
+display: flex;
+justify-content: center;
+}
+.members-list{
+  display: flex;
+  justify-content: center;
 }
