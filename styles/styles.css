@@ -146,20 +146,31 @@ body {
     padding: 10px;
 }
 /* Table in about */
-table{
-    border: 3px solid black;
-    border-collapse: collapse; /* makes single border instead of double */
-    padding: 8px;
+/* Centered Table Styling */
+table {
+  border: 3px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+  margin: 40px auto; /* centers table horizontally */
+  width: 80%; /* optional: gives it a nice balanced width */
+  max-width: 800px; /* prevents it from stretching too wide */
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
-thead th{
+
+thead th {
   border: 2px solid black;
-    padding: 8px;
-    text-align: center;
+  padding: 8px;
+  text-align: center;
+  background-color: #c40000;
+  color: white;
 }
-tr td{
+
+tr td {
   border: 2px solid black;
-    padding: 8px;
-    text-align: center;
+  padding: 8px;
+  text-align: center;
 }
 .stu-images{
   width: 200px;
@@ -195,6 +206,7 @@ justify-content: center;
 /* --- Additional Responsive & Modern Styles --- */
 
 body {
+
   line-height: 1.6;
   background-color: #fafafa;
 }
@@ -258,29 +270,6 @@ header h1 {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-
-/* Table */
-.members-interests {
-  margin: 40px auto;
-  width: 90%;
-  max-width: 800px;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.members-interests caption {
-  caption-side: top;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.members-interests th {
-  background-color: #c40000;
-  color: white;
 }
 
 /* Footer improvements */
