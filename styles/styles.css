@@ -192,7 +192,6 @@ justify-content: center;
   display: flex;
   justify-content: center;
 }
-<<<<<<< HEAD
 .job-card {
   display: flex;
   align-items: center;
@@ -241,11 +240,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
-a:hover {
-  text-decoration: underline;
-}
-=======
 .members-interests{
   justify-content: center;
 }
@@ -380,4 +374,3 @@ hr{
   border: 2px solid darkgoldenrod ;
   border-top: 2px solid darkgoldenrod;
 }
->>>>>>> b2c7423d331652c399413fec8f6d32f05e3101f3
