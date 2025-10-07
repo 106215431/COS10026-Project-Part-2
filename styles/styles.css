@@ -90,7 +90,7 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #c40000; /* red */
+      background-color: black;
       padding: 10px 20px;
       position: fixed;
       top: 0;
@@ -113,18 +113,8 @@ body {
     }
 
     /* Navbar links */
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
 
-    .navbar ul li {
-      margin: 0 10px;
-    }
-
-    .navbar ul li a {
+    .navbar a {
       color: white;
       text-decoration: none;
       font-size: 1rem;
@@ -133,33 +123,43 @@ body {
       transition: background-color 0.3s;
     }
 
-    .navbar ul li a:hover {
-      background-color: #730101; /* darker red on hover */
+    .navbar a:hover {
+      background-color: darkgoldenrod
     }
 .navbar a {
     color: white;
 }
 /* footer */
 .footer{
-    background-color: #c40000;
+    background-color: black;
     color: white;
     padding: 10px;
 }
-/* Table in about */
-table{
-    border: 3px solid black;
-    border-collapse: collapse; /* makes single border instead of double */
-    padding: 8px;
+/* Centered Table Styling */
+table {
+  border: 3px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+  margin: 40px auto; /* centers table horizontally */
+  width: 80%; /* optional: gives it a nice balanced width */
+  max-width: 800px; /* prevents it from stretching too wide */
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
-thead th{
+
+thead th {
   border: 2px solid black;
-    padding: 8px;
-    text-align: center;
+  padding: 8px;
+  text-align: center;
+  background-color: #c40000;
+  color: white;
 }
-tr td{
+
+tr td {
   border: 2px solid black;
-    padding: 8px;
-    text-align: center;
+  padding: 8px;
+  text-align: center;
 }
 .stu-images{
   width: 200px;
@@ -192,6 +192,7 @@ justify-content: center;
   display: flex;
   justify-content: center;
 }
+<<<<<<< HEAD
 .job-card {
   display: flex;
   align-items: center;
@@ -244,3 +245,139 @@ a {
 a:hover {
   text-decoration: underline;
 }
+=======
+.members-interests{
+  justify-content: center;
+}
+
+/* --- Additional Responsive & Modern Styles --- */
+
+body {
+
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+/* Header & Page Title */
+header h1 {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 2rem;
+  color: #c40000;
+}
+
+/* Course Info */
+.course-info {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 700px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Members section */
+.members-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.members-list figure {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.members-list figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.members-list figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Group photo */
+.group-photo {
+  text-align: center;
+  margin: 50px 0;
+}
+
+#group-photo {
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Footer improvements */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* --- Responsive layout --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    padding: 8px 0;
+  }
+
+  .members-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #group-photo {
+    width: 100%;
+  }
+
+  table, th, td {
+    font-size: 0.9rem;
+  }
+}
+.members-list-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Section Headings */
+section h3 {
+  font-size: 1.8rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+hr{
+  color: darkgoldenrod;
+}
+.filler{
+  border: 2px solid darkgoldenrod ;
+  border-top: 2px solid darkgoldenrod;
+}
+>>>>>>> b2c7423d331652c399413fec8f6d32f05e3101f3
