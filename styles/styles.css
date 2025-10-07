@@ -1,8 +1,8 @@
 /*
 
-filename: Ngo Nhat Nam
+filename: CSS
 
-author: Ngo Nhat Nam
+author: Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam
 
 created: 29/09/2025
 
@@ -166,6 +166,10 @@ tr td{
   height: 300px;
   object-fit: cover;
 }
+.stu-images:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 .members-list{
   display: flex;
   gap: 10px;
@@ -187,4 +191,56 @@ justify-content: center;
 .members-list{
   display: flex;
   justify-content: center;
+}
+.job-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  flex-direction: row;
+}
+.job-icon{
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  margin-right: 200px;
+  margin-left: 50px;
+}
+.apply-button {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.apply-button:hover {
+  background-color: #004999;
+}
+main {
+    padding: 5%;
+}
+aside {
+    border: 4px inset rgb(0, 0, 0);
+    border-radius: 14px;
+    margin: 1em;
+    padding: 1em;
+    background:url(image/fade.jpg) repeat-x top left;
+    align: right;
+    box-shadow: 10px 10px 5px #1f1e33;
+    width: 30%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
