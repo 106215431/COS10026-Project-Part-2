@@ -228,7 +228,7 @@ aside {
     margin: 1em;
     padding: 1em;
     background:white;
-    align: right;
+    align-items: right;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     width: 30%;
 }
