@@ -380,3 +380,8 @@ section h3 {
    padding-top: 60px;
    justify-content: center;
 }
+section div ul{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
