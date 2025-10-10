@@ -111,19 +111,19 @@ main {
 }
 
 .apply-button {
-  background-color: #0077b6;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1em;
+  background-color: #32b1d6;
+  color: #2c3e50;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  text-decoration: none;
   font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
+}
+.apply-button:hover {
+  background-color: #32b1d6;
 }
 
-.apply-button:hover {
-  background-color: #005f91;
-}
 
 /* === Sidebar === */
 aside {
@@ -493,31 +493,46 @@ body {
     color: #004aad;
 }
 
-.job-list {
+.job-list-listing {
     
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-.job-card {
+.job-card-listing {
+    position: relative; 
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     padding: 1.5rem;
+    padding-right: 180px;
     text-align: left;
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
-.job-card:hover {
+.job-card-listing:hover {
     transform: translateY(-5px);
 }
 
-.job-card h3 {
+.job-icon-listing {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.job-card-listing h3 {
     color: #004aad;
+    margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
-.job-card p {
+.job-card-listing p {
     margin-bottom: 0.5rem;
 }
 
