@@ -1,305 +1,260 @@
-/*
+/* ==========================================================
+   Unified Stylesheet — Sky Blue Theme
+   Authors: Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam
+   Updated: 10/10/2025
+   ========================================================== */
 
-filename: CSS
-
-author: Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam
-
-created: 29/09/2025
-
-last modified: 29/09/2025
-
-*/
-
+/* === Base === */
 body {
-  font-family:  Arial, sans-serif;
-  margin: 30px;
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6f7ff; /* 🌤️ soft sky blue */
+  color: #222;
+  line-height: 1.6;
 }
 
-form {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 15px;
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
+/* === Typography === */
+h1, h2, h3 {
+  color: #005f73;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #0077b6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #023e8a;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid #90e0ef;
+  margin: 20px 0;
+}
+
+/* === Navbar (Header) === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #48cae4, #0077b6);
+  color: white;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+/* === Main Content === */
+main {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 40px 25px;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-label {
-  font-weight: bold;
-  margin-top: 5px;
-  align-self: center;
+/* === Job Cards === */
+.job-card {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-input, select, textarea {
-  padding: 8px;
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+}
+
+.job-card h2 {
+  color: #0077b6;
+}
+
+.job-icon {
+  width: 130px;
+  border-radius: 10px;
+}
+
+.apply-button {
+  background-color: #0077b6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #005f91;
+}
+
+/* === Sidebar === */
+aside {
+  background: #e0f7fa;
+  border-left: 4px solid #00b4d8;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 350px;
+}
+
+aside h3 {
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+/* === Form === */
+form {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 15px;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 fieldset {
-  grid-column: span 2;
+  margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 10px;
-  background: #f1f1f1;
+  padding: 15px;
+  background: #f8fcff;
 }
 
 legend {
-  font-weight: bold;
-}
-
-.radio-group, .checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 80px;
+  font-weight: 600;
+  color: #0077b6;
 }
 
 .submit-btn {
-  grid-column: span 2;
-  justify-self: center;
-}
-
-button {
-  background-color: #0066cc;
-  color: #fff;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #004999;
-}
-body {
-  margin: 0; /* remove default margin */
-  padding-top: 60px; /* add space equal to navbar height */
-}
-.navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: black;
-      padding: 10px 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-
-    /* Logo */
-    .navbar .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar .logo span {
-      margin-left: 8px;
-    }
-
-    /* Navbar links */
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .navbar a:hover {
-      background-color: darkgoldenrod
-    }
-.navbar a {
-    color: white;
-}
-/* footer */
-.footer{
-    background-color: black;
-    color: white;
-    padding: 10px;
-}
-/* Centered Table Styling */
-table {
-  border: 3px solid black;
-  border-collapse: collapse;
-  padding: 8px;
-  margin: 40px auto; /* centers table horizontally */
-  width: 80%; /* optional: gives it a nice balanced width */
-  max-width: 800px; /* prevents it from stretching too wide */
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-
-thead th {
-  border: 2px solid black;
-  padding: 8px;
   text-align: center;
-  background-color: #ff0000;
+  margin-top: 25px;
+}
+
+.submit-btn button {
+  background-color: #0077b6;
   color: white;
-}
-
-tr td {
-  border: 2px solid black;
-  padding: 8px;
-  text-align: center;
-}
-.stu-images{
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-}
-.members-list{
-  display: flex;
-  gap: 10px;
-}
-#group-photo{
-  width: 600px;
-  height: 350px;
-}
-.group-photo{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: center;
-}
-#group-photo-cap{
-display: flex;
-justify-content: center;
-}
-.members-list{
-  display: flex;
-  justify-content: center;
-}
-.job-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1.5em;
-  margin-bottom: 1.5em;
-  flex-direction: row;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-.job-icon{
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  margin-right: 200px;
-  margin-left: 50px;
-}
-.apply-button {
-  background-color: #0066cc;
-  color: #fff;
-  padding: 12px 24px;
-  font-size: 16px;
   border: none;
-  border-radius: 6px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-}
-.apply-button:hover {
-  background-color: #004999;
-}
-main {
-    padding: 5%;
-}
-aside {
-    border: 1px solid #ddd;
-    border-radius: 14px;
-    margin: 1em;
-    padding: 1em;
-    background:white;
-    align-items: right;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    width: 30%;
-}
-a {
-  color: white;
-  text-decoration: none;
-}
-.members-interests{
-  justify-content: center;
+  transition: background 0.3s ease;
 }
 
-/* --- Additional Responsive & Modern Styles --- */
-
-body {
-
-  line-height: 1.6;
-  background-color: #fafafa;
+.submit-btn button:hover {
+  background-color: #005f91;
 }
 
-/* Header & Page Title */
-header h1 {
-  text-align: center;
-  margin-top: 80px;
-  font-size: 2rem;
-  color: #000000;
-}
-
-/* Course Info */
-.course-info {
-  text-align: center;
-  margin: 40px auto;
-  max-width: 700px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Members section */
+/* === Members Section === */
 .members-section {
   text-align: center;
-  margin: 40px 0;
+  margin: 60px 0;
+}
+
+.members-list-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #0077b6;
+  margin-bottom: 20px;
 }
 
 .members-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 .members-list figure {
   text-align: center;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .members-list figure:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+}
+
+.stu-images {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 .members-list figcaption {
-  margin-top: 10px;
-  font-weight: bold;
+  font-weight: 600;
+  color: #0077b6;
 }
 
-/* Group photo */
+/* === Group Photo === */
 .group-photo {
   text-align: center;
   margin: 50px 0;
@@ -310,14 +265,52 @@ header h1 {
   max-width: 700px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* Footer improvements */
-.footer {
+#group-photo-cap {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  color: #0077b6;
+  margin-top: 10px;
+}
+
+/* === Tables === */
+table {
+  border-collapse: collapse;
+  margin: 40px auto;
+  width: 85%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+thead th {
+  background-color: #0077b6;
+  color: white;
+  padding: 10px;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 10px;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+}
+
+/* === Footer === */
+.footer {
+  background: linear-gradient(135deg, #0077b6, #48cae4);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  border-top: 3px solid #90e0ef;
+}
+
+.footer h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
 }
 
 .footer a {
@@ -325,15 +318,25 @@ header h1 {
   text-decoration: underline;
 }
 
-/* --- Responsive layout --- */
-@media (max-width: 768px) {
+.footer a:hover {
+  color: #caf0f8;
+}
+
+/* === Responsive === */
+@media (max-width: 800px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .navbar a {
-    padding: 8px 0;
+  .job-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .job-icon {
+    width: 100px;
+    margin: 20px 0;
   }
 
   .members-list {
@@ -341,20 +344,26 @@ header h1 {
     align-items: center;
   }
 
-  #group-photo {
-    width: 100%;
+  .stu-images {
+    width: 160px;
+    height: 210px;
   }
 
-  table, th, td {
-    font-size: 0.9rem;
+  main {
+    margin: 80px 15px;
+    padding: 20px;
   }
 }
-.members-list-title{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Course Info */
+.course-info {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 700px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-/* Section Headings */
 section h3 {
   font-size: 1.8rem;
   margin-top: 50px;
@@ -363,10 +372,11 @@ section h3 {
   display: flex;
   justify-content: center;
 }
-hr{
-  color: darkgoldenrod;
+.hero{
+   padding-top: 60px;
 }
-.filler{
-  border: 2px solid darkgoldenrod ;
-  border-top: 2px solid darkgoldenrod;
+#about{
+   display: flex;
+   padding-top: 60px;
+   justify-content: center;
 }
