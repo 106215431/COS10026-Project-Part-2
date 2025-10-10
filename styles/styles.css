@@ -385,3 +385,6 @@ section div ul{
   align-items: flex-start;
   flex-direction: column;
 }
+dd{
+  display: contents;
+}
