@@ -380,3 +380,272 @@ section h3 {
    padding-top: 60px;
    justify-content: center;
 }
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004aad;
+    padding: 1rem 2rem;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd43b;
+}
+
+.logo a {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.logo span {
+    color: #ffd43b;
+}
+
+
+.hero {
+    background: linear-gradient(120deg, #004aad, #0f8b8d);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.search-bar input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    width: 250px;
+}
+
+.search-bar button {
+    background-color: #ffd43b;
+    color: #333;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #fff;
+    color: #004aad;
+}
+
+
+.featured-jobs {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.featured-jobs h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #004aad;
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.job-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h3 {
+    color: #004aad;
+    margin-bottom: 0.5rem;
+}
+
+.job-card p {
+    margin-bottom: 0.5rem;
+}
+
+.apply-btn {
+    display: inline-block;
+    background-color: #004aad;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: #0f8b8d;
+}
+
+
+.categories {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.categories h2 {
+    color: #004aad;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.2rem;
+}
+
+.category-box {
+    background-color: #f0f3f7;
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-box:hover {
+    background-color: #004aad;
+    color: #fff;
+}
+
+
+.about {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #eaf1f8;
+}
+
+.about h2 {
+    color: #004aad;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1rem;
+}
+
+
+.testimonials {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.testimonials h2 {
+    color: #004aad;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-card {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+
+.footer {
+    background-color: #004aad;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: #ffd43b;
+    text-decoration: none;
+    display: block;
+    margin: 0.3rem 0;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar input {
+        width: 90%;
+    }
+}
