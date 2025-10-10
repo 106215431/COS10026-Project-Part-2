@@ -380,6 +380,7 @@ section h3 {
    padding-top: 60px;
    justify-content: center;
 }
+<<<<<<< HEAD
 /* ===== Global Styles ===== */
 * {
     margin: 0;
@@ -649,3 +650,13 @@ body {
         width: 90%;
     }
 }
+=======
+section div ul{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+dd{
+  display: contents;
+}
+>>>>>>> 35947022e274b2d0ad69f189ea46993b1f5e2b18
