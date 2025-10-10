@@ -82,7 +82,7 @@ main {
 /* === Job Cards === */
 .job-card {
   background: #ffffff;
-  display: flex;
+  width: 25%;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
@@ -90,6 +90,10 @@ main {
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-list{
+  display: flex; 
 }
 
 .job-card:hover {
@@ -487,7 +491,7 @@ body {
 }
 
 .job-list {
-    display: grid;
+    
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
