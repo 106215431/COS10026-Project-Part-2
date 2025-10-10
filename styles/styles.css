@@ -82,7 +82,6 @@ main {
 /* === Job Cards === */
 .job-card {
   background: #ffffff;
-  width: 25%;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
