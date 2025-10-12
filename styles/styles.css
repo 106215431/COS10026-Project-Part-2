@@ -223,6 +223,7 @@ legend {
 
 .members-list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
@@ -234,7 +235,6 @@ legend {
   background: #ffffff;
   border-radius: 10px;
   padding: 15px;
-  width: 200px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -255,6 +255,14 @@ legend {
 .members-list figcaption {
   font-weight: 600;
   color: #0077b6;
+}
+
+figure.stuid {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* === Group Photo === */
