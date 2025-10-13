@@ -281,7 +281,7 @@ legend {
     justify-content: center;
     align-items: center;
     font-size: 1.6rem;
-    color: #ffffff;
+    color: #0077b6;
     margin-bottom: 20px;
 }
 
@@ -611,7 +611,7 @@ section h1{
     color: white;
 }
 body{
-    background-image: url('/styles/images/windows-hill-background-image.jpg');
+    background-image: url('/styles/images/wintest.jpg');
     background-size: cover;
     background-position: center;
 }
