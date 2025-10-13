@@ -119,7 +119,6 @@ main {
 }
 
 .job-icon, .job-icon-listing {
-    width: 130px;
     max-width: 100%;
     border-radius: 10px;
     object-fit: cover;
@@ -130,8 +129,8 @@ main {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 150px;
-    height: 150px;
+    width: 15%;
+    height: 15%;
     border: 2px solid #ccc;
 }
 
@@ -567,6 +566,10 @@ section h3 {
     padding-top: 60px;
 }
 
+section h1{
+    color: white;
+}
+
 #about {
     display: flex;
     padding-top: 60px;
@@ -618,4 +621,8 @@ section h3 {
 
 #Job-Application {
     padding-top: 90px;
+}
+
+section h1{
+    color: white;
 }
