@@ -16,7 +16,7 @@ body {
     background-color: #e6f7ff;
     color: #222;
     line-height: 1.6;
-    background-image: url('/styles/images/windows-hill-background-image.jpg');
+    background-image: url('/styles/images/webbg.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -68,6 +68,8 @@ hr {
 
 .logo span {
     color: #ffd43b;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .navbar a {
@@ -78,8 +80,9 @@ hr {
     margin-left: 1.5rem;
     transition: color 0.3s ease, background 0.3s;
 }
-.navbar a:hover {
-    background-color: rgba(255,255,255,0.15);
+.navbar a:hover,
+.navbar a:focus {
+    background-color: rgba(255,255,255,0.25);
     color: #ffd43b;
 }
 
@@ -140,8 +143,8 @@ main {
 .apply-button, .apply-btn {
     display: inline-block;
     margin-top: 1em;
-    background-color: #32b1d6;
-    color: #2c3e50;
+    background-color: #007EA7;
+    color: #FFFFFF;
     padding: 0.6em 1.2em;
     border-radius: 8px;
     text-decoration: none;
@@ -186,7 +189,9 @@ form {
 .formname {
     text-align: center;
     padding-top: 90px;
-    color: white;
+    color: #002244;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #005f73;
 }
 
 form label {
@@ -362,16 +367,41 @@ figure.stuid {
 #group-photo-cap {
     display: flex;
     justify-content: center;
+    color: #005f73;
     font-style: italic;
-    color: #ffffff;
     margin-top: 10px;
     text-align: center;
 }
 
-.members-section::after {
-    content: "";
-    display: table;
-    clear: both;
+/* === Accessibility: Focus Styles === */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #005f73;
+    outline-offset: 2px;
+}
+
+/* Members Section Title: improved contrast */
+.members-list-title {
+    color: #005f73;
+}
+
+
+/* Footer links: visible focus */
+.footer a:focus {
+    color: #caf0f8;
+    outline: 2px solid #ffd43b;
+    outline-offset: 2px;
+}
+
+/* Buttons: visible focus */
+.submit-btn button:focus,
+.apply-button:focus,
+.apply-btn:focus {
+    outline: 2px solid #ffd43b;
+    outline-offset: 2px;
 }
 
 /* === Tables === */
@@ -546,6 +576,7 @@ section h1 {
 }
 
 #about {
+    color: #0077b6;
     display: flex;
     padding-top: 60px;
     justify-content: center;
@@ -603,21 +634,7 @@ section h1 {
 }
 
 .white-headings {
-    color: white;
-}
-
-
-section h1{
-    color: white;
-}
-body{
-    background-image: url('/styles/images/webbg.jpg');
-    background-size: cover;
-    background-position: center;
-}
-.about{
-    background-color: white;
-}
-.white-headings{
-    color: white
+    color: #002244;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #005f73;
 }
