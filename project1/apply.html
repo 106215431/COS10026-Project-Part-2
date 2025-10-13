@@ -21,7 +21,7 @@
     </nav>
   </header>
   <section>
-  <h1 class="formname" >Job Application Form</h1>
+  <h1 class="formname">Job Application Form</h1>
   <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
     <!-- Job Reference -->
     <label for="jobRef">Job Reference Number:</label>
@@ -42,8 +42,9 @@
     <input type="text" id="lastName" name="lastName" maxlength="20"
            pattern="[A-Za-z]{1,20}" required>
     <!-- 
-    Portions of this RegEx for Date of Birth were generated with assistance from 
-    ChatGPT (GPT-4) and/or GitHub Copilot.
+    Portions of this Regex for Date of Birth were generated with assistance from 
+    ChatGPT (GPT-4).
+    Prompt: Can you help me create a regex to validate date of birth in dd/mm/yyyy format?
     Reviewed, modified, and approved by Vu Gia Hien.
     -->
     <!-- Regex for proper dob validation -->
@@ -83,7 +84,7 @@
     <input type="text" id="postcode" name="postcode" pattern="^\d{4}$" maxlength="4" required>
 
     <!-- Email Address -->
-    <!-- Email format is xxx@x.com -->
+    <!-- Email format is xxx@x.com or .org/.vn/.edu -->
     <!-- 
     Portions of this RegEx for Email Address were generated with assistance from 
     the Regex Generator (URL:https://regex-generator.olafneumann.org/).
