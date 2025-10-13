@@ -5,42 +5,42 @@
    ========================================================== */
 
 /* ===== Global Styles ===== */
-* {
+* { /* Reset and global font setup */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-body {
-    background-color: #e6f7ff; /* 🌤️ soft sky blue */
+body { /* Page background and text color */
+    background-color: #e6f7ff;
     color: #222;
     line-height: 1.6;
 }
 
 /* === Typography === */
-h1, h2, h3 {
+h1, h2, h3 { /* Heading styles */
     color: #005f73;
     margin-bottom: 15px;
 }
 
-a {
+a { /* Default link style */
     color: #0077b6;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-a:hover {
+a:hover { /* Link hover effect */
     color: #023e8a;
 }
 
-hr {
+hr { /* Horizontal divider style */
     border: 0;
     border-top: 2px solid #90e0ef;
     margin: 20px 0;
 }
 
 /* === Navbar (Header) === */
-.navbar {
+.navbar { /* Main navigation bar container */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,17 +57,17 @@ hr {
 }
 
 .navbar .logo,
-.logo a {
+.logo a { /* Logo text styling */
     font-size: 1.4rem;
     font-weight: 600;
     color: white;
 }
 
-.logo span {
+.logo span { /* Highlighted logo part */
     color: #ffd43b;
 }
 
-.navbar a {
+.navbar a { /* Navbar links */
     color: white;
     padding: 8px 14px;
     border-radius: 6px;
@@ -75,13 +75,13 @@ hr {
     margin-left: 1.5rem;
     transition: color 0.3s ease, background 0.3s;
 }
-.navbar a:hover {
+.navbar a:hover { /* Navbar link hover */
     background-color: rgba(255,255,255,0.15);
     color: #ffd43b;
 }
 
 /* === Main Content === */
-main {
+main { /* Main page container */
     max-width: 1100px;
     width: 100%;
     margin: 100px auto;
@@ -92,7 +92,7 @@ main {
 }
 
 /* === Job Cards === */
-.job-card, .job-card-listing {
+.job-card, .job-card-listing { /* Job post card */
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.05);
@@ -107,12 +107,12 @@ main {
     position: relative;
 }
 
-.job-card:hover, .job-card-listing:hover {
+.job-card:hover, .job-card-listing:hover { /* Hover lift effect */
     transform: translateY(-4px);
     box-shadow: 0 5px 14px rgba(0,0,0,0.1);
 }
 
-.job-card h2, .job-card-listing h3 {
+.job-card h2, .job-card-listing h3 { /* Job title text */
     color: #0077b6;
     margin-top: 0;
     margin-bottom: 0.5rem;
@@ -125,7 +125,7 @@ main {
     margin-bottom: 1rem;
 }
 
-.job-icon-listing {
+.job-icon-listing { /* Job image in listing view */
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -134,7 +134,7 @@ main {
     border: 2px solid #ccc;
 }
 
-.apply-button, .apply-btn {
+.apply-button, .apply-btn { /* Apply button style */
     display: inline-block;
     margin-top: 1em;
     background-color: #32b1d6;
@@ -145,13 +145,13 @@ main {
     font-weight: 600;
     transition: background 0.3s ease;
 }
-.apply-button:hover, .apply-btn:hover {
+.apply-button:hover, .apply-btn:hover { /* Apply button hover */
     background-color: #0f8b8d;
     color: #fff;
 }
 
 /* === Sidebar === */
-aside {
+aside { /* Sidebar info box */
     background: #e0f7fa;
     border-left: 4px solid #00b4d8;
     padding: 20px;
@@ -162,17 +162,16 @@ aside {
     width: 100%;
 }
 
-aside h3 {
+aside h3 { /* Sidebar title */
     color: #0077b6;
     margin-bottom: 10px;
 }
 
 /* === Form === */
-/* === Form Container === */
-form {
-  display: grid; /* ✅ display factor added */
-  grid-template-columns: 1fr 1fr; /* two columns for responsiveness */
-  gap: 20px; /* spacing between elements */
+form { /* Form container layout */
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
   max-width: 700px;
   margin: 40px auto;
   background: #ffffff;
@@ -181,24 +180,22 @@ form {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.formname {
+.formname { /* Form title alignment */
     text-align: center;
     padding-top: 90px;
     color: white;
 }
 
-/* Make labels and inputs stack properly */
-form label {
+form label { /* Label styling */
   display: block;
   font-weight: 600;
   margin-top: 8px;
 }
 
-/* Inputs, selects, textareas take full width of grid cell */
 form input[type="text"],
 form input[type="email"],
 form select,
-form textarea {
+form textarea { /* Input and textarea base style */
   width: 100%;
   padding: 10px;
   margin-top: 6px;
@@ -208,14 +205,13 @@ form textarea {
   box-sizing: border-box;
 }
 
-form textarea {
+form textarea { /* Textarea size */
   resize: vertical;
   min-height: 100px;
 }
 
-/* === Fieldset and legend === */
-fieldset {
-  grid-column: 1 / 3; /* ✅ fieldsets span both columns */
+fieldset { /* Group related form inputs */
+  grid-column: 1 / 3;
   margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -223,30 +219,28 @@ fieldset {
   background: #f8fcff;
 }
 
-legend {
+legend { /* Fieldset title */
   font-weight: 600;
   color: #0077b6;
 }
 
-/* Group checkboxes horizontally using flex */
-.checkbox-group {
+.checkbox-group { /* Arrange checkboxes inline */
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.checkbox-group label {
+.checkbox-group label { /* Checkbox label style */
   font-weight: normal;
 }
 
-/* === Submit Button === */
-.submit-btn {
-  grid-column: 1 / 3; /* ✅ button centered across full form */
+.submit-btn { /* Center submit button */
+  grid-column: 1 / 3;
   text-align: center;
   margin-top: 25px;
 }
 
-.submit-btn button {
+.submit-btn button { /* Submit button design */
   background-color: #0077b6;
   color: white;
   border: none;
@@ -257,31 +251,29 @@ legend {
   transition: background 0.3s ease;
 }
 
-.submit-btn button:hover {
+.submit-btn button:hover { /* Submit hover */
   background-color: #005f91;
 }
 
 /* === Responsive Design === */
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Mobile form layout */
   form {
-    grid-template-columns: 1fr; /* ✅ stack all items on small screens */
+    grid-template-columns: 1fr;
     padding: 20px;
   }
-
   fieldset,
   .submit-btn {
     grid-column: 1 / 2;
   }
 }
 
-
 /* === Members Section === */
-.members-section {
+.members-section { /* Team members container */
     text-align: center;
     margin: 60px 0;
 }
 
-.members-list-title {
+.members-list-title { /* Members section heading */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,7 +282,7 @@ legend {
     margin-bottom: 20px;
 }
 
-.members-list {
+.members-list { /* Member card grid */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -301,7 +293,7 @@ legend {
     box-sizing: border-box;
 }
 
-.members-list figure {
+.members-list figure { /* Individual member card */
     text-align: center;
     background: #ffffff;
     border-radius: 10px;
@@ -310,12 +302,12 @@ legend {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.members-list figure:hover {
+.members-list figure:hover { /* Hover effect on member card */
     transform: translateY(-5px);
     box-shadow: 0 5px 14px rgba(0,0,0,0.12);
 }
 
-.stu-images {
+.stu-images { /* Student image style */
     width: 180px;
     height: 240px;
     object-fit: cover;
@@ -323,12 +315,12 @@ legend {
     margin-bottom: 8px;
 }
 
-.members-list figcaption {
+.members-list figcaption { /* Member name text */
     font-weight: 600;
     color: #0077b6;
 }
 
-figure.stuid {
+figure.stuid { /* ID card layout */
     background: #fff;
     border-radius: 10px;
     padding: 15px;
@@ -343,7 +335,7 @@ figure.stuid {
     margin: 0;
 }
 
-.group-photo {
+.group-photo { /* Group image container */
     float: right;
     width: 38%;
     margin: 0 0 0 2%;
@@ -354,7 +346,7 @@ figure.stuid {
     box-sizing: border-box;
 }
 
-#group-photo {
+#group-photo { /* Group photo styling */
     width: 100%;
     max-width: 350px;
     height: auto;
@@ -362,7 +354,7 @@ figure.stuid {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-#group-photo-cap {
+#group-photo-cap { /* Caption below photo */
     display: flex;
     justify-content: center;
     font-style: italic;
@@ -371,8 +363,7 @@ figure.stuid {
     text-align: center;
 }
 
-/* Clear floats after members section */
-.members-section::after {
+.members-section::after { /* Clear float fix */
     content: "";
     display: table;
     clear: both;
@@ -393,7 +384,7 @@ figure.stuid {
 }
 
 /* === Tables === */
-table {
+table { /* Table layout */
     border-collapse: collapse;
     margin: 40px auto;
     width: 85%;
@@ -402,20 +393,20 @@ table {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-thead th {
+thead th { /* Table header cells */
     background-color: #0077b6;
     color: white;
     padding: 10px;
 }
 
-td, th {
+td, th { /* Table cells */
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
 }
 
 /* === Footer === */
-.footer {
+.footer { /* Footer section */
     background: linear-gradient(135deg, #0077b6, #48cae4);
     color: white;
     text-align: center;
@@ -425,30 +416,30 @@ td, th {
     width: 100%;
 }
 
-.footer h2 {
+.footer h2 { /* Footer heading */
     font-size: 1.125rem;
     margin-bottom: 10px;
     color: white;
 }
 
-.footer a {
+.footer a { /* Footer links */
     color: #ffd43b;
     text-decoration: underline;
     display: block;
     margin: 0.3rem 0;
     transition: color 0.3s;
 }
-.footer a:hover {
+.footer a:hover { /* Footer link hover */
     color: #caf0f8;
 }
 
-.footer p {
+.footer p { /* Footer paragraph */
     margin-top: 1rem;
     font-size: 0.9rem;
 }
 
-/* === Responsive === */
-@media (max-width: 1100px) {
+/* === Responsive Adjustments === */
+@media (max-width: 1100px) { /* Adjust layout for medium screens */
     main {
         max-width: 98vw;
         margin: 80px 1vw;
@@ -459,7 +450,7 @@ td, th {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) { /* Layout for tablets */
     .members-list, .group-photo {
         float: none;
         width: 100%;
@@ -479,7 +470,7 @@ td, th {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) { /* Small tablets and phones */
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -510,7 +501,7 @@ td, th {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Mobile navbar and hero adjustments */
     .navbar {
         flex-direction: column;
     }
@@ -528,8 +519,8 @@ td, th {
     }
 }
 
-/* Course Info */
-.course-info {
+/* === Course Info Section === */
+.course-info { /* Course info container */
     text-align: center;
     margin: 40px auto;
     max-width: 700px;
@@ -540,7 +531,7 @@ td, th {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-section h3 {
+section h3 { /* Section heading */
     font-size: 1.8rem;
     margin-top: 50px;
     margin-bottom: 20px;
@@ -549,7 +540,7 @@ section h3 {
     justify-content: center;
 }
 
-.hero {
+.hero { /* Hero section background */
     background: linear-gradient(120deg, #004aad, #0f8b8d);
     color: white;
     text-align: center;
@@ -570,21 +561,21 @@ section h1{
     width: 100%;
 }
 
-.featured-jobs, .categories, .about, .testimonials {
+.featured-jobs, .categories, .about, .testimonials { /* Common section layout */
     padding: 4rem 2rem;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
 }
 
-.category-grid {
+.category-grid { /* Category grid layout */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.2rem;
     width: 100%;
 }
 
-.category-box {
+.category-box { /* Category card style */
     background-color: #f0f3f7;
     padding: 1.2rem;
     border-radius: 12px;
@@ -592,12 +583,12 @@ section h1{
     transition: all 0.3s ease;
     cursor: pointer;
 }
-.category-box:hover {
+.category-box:hover { /* Category hover effect */
     background-color: #004aad;
     color: #fff;
 }
 
-.testimonial-card {
+.testimonial-card { /* Testimonial card layout */
     background-color: #f9f9f9;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -607,12 +598,12 @@ section h1{
     width: 100%;
 }
 
-.testimonial-card p {
+.testimonial-card p { /* Testimonial text */
     font-style: italic;
     margin-bottom: 1rem;
 }
 
-#Job-Application {
+#Job-Application { /* Job application form spacing */
     padding-top: 90px;
 }
 
