@@ -6,6 +6,8 @@
   Portions of this CSS were generated with assistance from 
   ChatGPT (GPT-5) and/or GitHub Copilot.
   Reviewed, modified, and approved by Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam, Nguyen Minh Hieu.
+  Prompt used: "Create a modern, responsive, and accessible CSS stylesheet for a job listing website with a sky blue theme. Include styles for header, footer, job cards, forms, and ensure good color contrast and readability."
+  and "refine and clean up for me"
 */
 
 
@@ -404,6 +406,7 @@ figure.stuid {
     max-width: 700px;
     height: auto;
     border-radius: 12px;
+    border: 2px solid #222;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
@@ -680,4 +683,25 @@ section h1 {
     color: #002244;
     font-weight: bold;
     text-shadow: 1px 1px 2px #005f73;
+}
+tr td:hover{
+    opacity: 0.8;
+}
+
+/* Group Members flex row for name and student ID */
+.course-info ul > li:nth-child(2) > ul {
+    list-style: none;
+    padding: 0;
+}
+.course-info ul > li:nth-child(2) > ul > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+}
+.course-info ul > li:nth-child(2) > ul > li > span:last-child {
+    margin-left: 2em;
+    text-align: right;
+    color: #0077b6;
+    font-weight: 500;
 }
