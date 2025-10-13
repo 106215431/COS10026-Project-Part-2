@@ -5,42 +5,45 @@
    ========================================================== */
 
 /* ===== Global Styles ===== */
-* { /* Reset and global font setup */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
 
-body { /* Page background and text color */
+body {
     background-color: #e6f7ff;
     color: #222;
     line-height: 1.6;
+    background-image: url('/styles/images/windows-hill-background-image.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* === Typography === */
-h1, h2, h3 { /* Heading styles */
+h1, h2, h3 {
     color: #005f73;
     margin-bottom: 15px;
 }
 
-a { /* Default link style */
+a {
     color: #0077b6;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-a:hover { /* Link hover effect */
+a:hover {
     color: #023e8a;
 }
 
-hr { /* Horizontal divider style */
+hr {
     border: 0;
     border-top: 2px solid #90e0ef;
     margin: 20px 0;
 }
 
 /* === Navbar (Header) === */
-.navbar { /* Main navigation bar container */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,17 +60,17 @@ hr { /* Horizontal divider style */
 }
 
 .navbar .logo,
-.logo a { /* Logo text styling */
+.logo a {
     font-size: 1.4rem;
     font-weight: 600;
     color: white;
 }
 
-.logo span { /* Highlighted logo part */
+.logo span {
     color: #ffd43b;
 }
 
-.navbar a { /* Navbar links */
+.navbar a {
     color: white;
     padding: 8px 14px;
     border-radius: 6px;
@@ -75,13 +78,13 @@ hr { /* Horizontal divider style */
     margin-left: 1.5rem;
     transition: color 0.3s ease, background 0.3s;
 }
-.navbar a:hover { /* Navbar link hover */
+.navbar a:hover {
     background-color: rgba(255,255,255,0.15);
     color: #ffd43b;
 }
 
 /* === Main Content === */
-main { /* Main page container */
+main {
     max-width: 1100px;
     width: 100%;
     margin: 100px auto;
@@ -92,7 +95,7 @@ main { /* Main page container */
 }
 
 /* === Job Cards === */
-.job-card, .job-card-listing { /* Job post card */
+.job-card, .job-card-listing {
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.05);
@@ -107,12 +110,12 @@ main { /* Main page container */
     position: relative;
 }
 
-.job-card:hover, .job-card-listing:hover { /* Hover lift effect */
+.job-card:hover, .job-card-listing:hover {
     transform: translateY(-4px);
     box-shadow: 0 5px 14px rgba(0,0,0,0.1);
 }
 
-.job-card h2, .job-card-listing h3 { /* Job title text */
+.job-card h2, .job-card-listing h3 {
     color: #0077b6;
     margin-top: 0;
     margin-bottom: 0.5rem;
@@ -125,7 +128,7 @@ main { /* Main page container */
     margin-bottom: 1rem;
 }
 
-.job-icon-listing { /* Job image in listing view */
+.job-icon-listing {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -134,7 +137,7 @@ main { /* Main page container */
     border: 2px solid #ccc;
 }
 
-.apply-button, .apply-btn { /* Apply button style */
+.apply-button, .apply-btn {
     display: inline-block;
     margin-top: 1em;
     background-color: #32b1d6;
@@ -145,13 +148,13 @@ main { /* Main page container */
     font-weight: 600;
     transition: background 0.3s ease;
 }
-.apply-button:hover, .apply-btn:hover { /* Apply button hover */
+.apply-button:hover, .apply-btn:hover {
     background-color: #0f8b8d;
     color: #fff;
 }
 
 /* === Sidebar === */
-aside { /* Sidebar info box */
+aside {
     background: #e0f7fa;
     border-left: 4px solid #00b4d8;
     padding: 20px;
@@ -162,13 +165,13 @@ aside { /* Sidebar info box */
     width: 100%;
 }
 
-aside h3 { /* Sidebar title */
+aside h3 {
     color: #0077b6;
     margin-bottom: 10px;
 }
 
 /* === Form === */
-form { /* Form container layout */
+form {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
   gap: 20px;
@@ -180,13 +183,13 @@ form { /* Form container layout */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.formname { /* Form title alignment */
+.formname {
     text-align: center;
     padding-top: 90px;
     color: white;
 }
 
-form label { /* Label styling */
+form label {
   display: block;
   font-weight: 600;
   margin-top: 8px;
@@ -195,7 +198,7 @@ form label { /* Label styling */
 form input[type="text"],
 form input[type="email"],
 form select,
-form textarea { /* Input and textarea base style */
+form textarea {
   width: 100%;
   padding: 10px;
   margin-top: 6px;
@@ -205,12 +208,12 @@ form textarea { /* Input and textarea base style */
   box-sizing: border-box;
 }
 
-form textarea { /* Textarea size */
+form textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-fieldset { /* Group related form inputs */
+fieldset {
   grid-column: 1 / 3;
   margin-top: 20px;
   border: 1px solid #ccc;
@@ -219,28 +222,28 @@ fieldset { /* Group related form inputs */
   background: #f8fcff;
 }
 
-legend { /* Fieldset title */
+legend {
   font-weight: 600;
   color: #0077b6;
 }
 
-.checkbox-group { /* Arrange checkboxes inline */
+.checkbox-group {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.checkbox-group label { /* Checkbox label style */
+.checkbox-group label {
   font-weight: normal;
 }
 
-.submit-btn { /* Center submit button */
+.submit-btn {
   grid-column: 1 / 3;
   text-align: center;
   margin-top: 25px;
 }
 
-.submit-btn button { /* Submit button design */
+.submit-btn button {
   background-color: #0077b6;
   color: white;
   border: none;
@@ -251,12 +254,12 @@ legend { /* Fieldset title */
   transition: background 0.3s ease;
 }
 
-.submit-btn button:hover { /* Submit hover */
+.submit-btn button:hover {
   background-color: #005f91;
 }
 
 /* === Responsive Design === */
-@media (max-width: 600px) { /* Mobile form layout */
+@media (max-width: 600px) {
   form {
     grid-template-columns: 1fr;
     padding: 20px;
@@ -268,12 +271,12 @@ legend { /* Fieldset title */
 }
 
 /* === Members Section === */
-.members-section { /* Team members container */
+.members-section {
     text-align: center;
     margin: 60px 0;
 }
 
-.members-list-title { /* Members section heading */
+.members-list-title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,7 +285,7 @@ legend { /* Fieldset title */
     margin-bottom: 20px;
 }
 
-.members-list { /* Member card grid */
+.members-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -293,7 +296,7 @@ legend { /* Fieldset title */
     box-sizing: border-box;
 }
 
-.members-list figure { /* Individual member card */
+.members-list figure {
     text-align: center;
     background: #ffffff;
     border-radius: 10px;
@@ -302,12 +305,12 @@ legend { /* Fieldset title */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.members-list figure:hover { /* Hover effect on member card */
+.members-list figure:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 14px rgba(0,0,0,0.12);
 }
 
-.stu-images { /* Student image style */
+.stu-images {
     width: 180px;
     height: 240px;
     object-fit: cover;
@@ -315,12 +318,12 @@ legend { /* Fieldset title */
     margin-bottom: 8px;
 }
 
-.members-list figcaption { /* Member name text */
+.members-list figcaption {
     font-weight: 600;
     color: #0077b6;
 }
 
-figure.stuid { /* ID card layout */
+figure.stuid {
     background: #fff;
     border-radius: 10px;
     padding: 15px;
@@ -335,7 +338,7 @@ figure.stuid { /* ID card layout */
     margin: 0;
 }
 
-.group-photo { /* Group image container */
+.group-photo {
     float: right;
     width: 38%;
     margin: 0 0 0 2%;
@@ -344,33 +347,35 @@ figure.stuid { /* ID card layout */
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    text-align: center;
+    margin: 50px 0;
 }
 
-#group-photo { /* Group photo styling */
-    width: 100%;
-    max-width: 350px;
+#group-photo {
+    width: 90%;
+    max-width: 700px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-#group-photo-cap { /* Caption below photo */
+#group-photo-cap {
     display: flex;
     justify-content: center;
     font-style: italic;
-    color: #0077b6;
+    color: #ffffff;
     margin-top: 10px;
     text-align: center;
 }
 
-.members-section::after { /* Clear float fix */
+.members-section::after {
     content: "";
     display: table;
     clear: both;
 }
 
 /* === Tables === */
-table { /* Table layout */
+table {
     border-collapse: collapse;
     margin: 40px auto;
     width: 85%;
@@ -379,20 +384,20 @@ table { /* Table layout */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-thead th { /* Table header cells */
+thead th {
     background-color: #0077b6;
     color: white;
     padding: 10px;
 }
 
-td, th { /* Table cells */
+td, th {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
 }
 
 /* === Footer === */
-.footer { /* Footer section */
+.footer {
     background: linear-gradient(135deg, #0077b6, #48cae4);
     color: white;
     text-align: center;
@@ -402,30 +407,30 @@ td, th { /* Table cells */
     width: 100%;
 }
 
-.footer h2 { /* Footer heading */
+.footer h2 {
     font-size: 1.125rem;
     margin-bottom: 10px;
     color: white;
 }
 
-.footer a { /* Footer links */
+.footer a {
     color: #ffd43b;
     text-decoration: underline;
     display: block;
     margin: 0.3rem 0;
     transition: color 0.3s;
 }
-.footer a:hover { /* Footer link hover */
+.footer a:hover {
     color: #caf0f8;
 }
 
-.footer p { /* Footer paragraph */
+.footer p {
     margin-top: 1rem;
     font-size: 0.9rem;
 }
 
 /* === Responsive Adjustments === */
-@media (max-width: 1100px) { /* Adjust layout for medium screens */
+@media (max-width: 1100px) {
     main {
         max-width: 98vw;
         margin: 80px 1vw;
@@ -436,7 +441,7 @@ td, th { /* Table cells */
     }
 }
 
-@media (max-width: 900px) { /* Layout for tablets */
+@media (max-width: 900px) {
     .members-list, .group-photo {
         float: none;
         width: 100%;
@@ -456,7 +461,7 @@ td, th { /* Table cells */
     }
 }
 
-@media (max-width: 800px) { /* Small tablets and phones */
+@media (max-width: 800px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -487,7 +492,7 @@ td, th { /* Table cells */
     }
 }
 
-@media (max-width: 768px) { /* Mobile navbar and hero adjustments */
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
     }
@@ -506,7 +511,7 @@ td, th { /* Table cells */
 }
 
 /* === Course Info Section === */
-.course-info { /* Course info container */
+.course-info {
     text-align: center;
     margin: 40px auto;
     max-width: 700px;
@@ -517,7 +522,7 @@ td, th { /* Table cells */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-section h3 { /* Section heading */
+section h3 {
     font-size: 1.8rem;
     margin-top: 50px;
     margin-bottom: 20px;
@@ -526,7 +531,7 @@ section h3 { /* Section heading */
     justify-content: center;
 }
 
-.hero { /* Hero section background */
+.hero {
     background: linear-gradient(120deg, #004aad, #0f8b8d);
     color: white;
     text-align: center;
@@ -536,7 +541,7 @@ section h3 { /* Section heading */
     padding-top: 60px;
 }
 
-section h1{
+section h1 {
     color: white;
 }
 
@@ -547,21 +552,21 @@ section h1{
     width: 100%;
 }
 
-.featured-jobs, .categories, .about, .testimonials { /* Common section layout */
+.featured-jobs, .categories, .about, .testimonials {
     padding: 4rem 2rem;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
 }
 
-.category-grid { /* Category grid layout */
+.category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.2rem;
     width: 100%;
 }
 
-.category-box { /* Category card style */
+.category-box {
     background-color: #f0f3f7;
     padding: 1.2rem;
     border-radius: 12px;
@@ -569,12 +574,12 @@ section h1{
     transition: all 0.3s ease;
     cursor: pointer;
 }
-.category-box:hover { /* Category hover effect */
+.category-box:hover {
     background-color: #004aad;
     color: #fff;
 }
 
-.testimonial-card { /* Testimonial card layout */
+.testimonial-card {
     background-color: #f9f9f9;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -584,20 +589,29 @@ section h1{
     width: 100%;
 }
 
-.testimonial-card p { /* Testimonial text */
+.testimonial-card p {
     font-style: italic;
     margin-bottom: 1rem;
 }
 
-#Job-Application { /* Job application form spacing */
+#Job-Application {
     padding-top: 90px;
 }
+
+.about {
+    background-color: white;
+}
+
+.white-headings {
+    color: white;
+}
+
 
 section h1{
     color: white;
 }
 body{
-    background-image: url('/styles/images/windows-hill-background-hcca6f6o2f8wup8h.jpg');
+    background-image: url('/styles/images/windows-hill-background-image.jpg');
     background-size: cover;
     background-position: center;
 }
