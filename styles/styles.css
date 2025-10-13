@@ -1,8 +1,13 @@
 /* ==========================================================
    Unified Stylesheet — Sky Blue Theme
-   Authors: Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam
-   Updated: 10/10/2025
-   ========================================================== */
+   Authors: Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam, Nguyen Minh Hieu
+   Updated: 13/10/2025
+   ==========================================================
+  Portions of this CSS were generated with assistance from 
+  ChatGPT (GPT-5) and/or GitHub Copilot.
+  Reviewed, modified, and approved by Ngo Nhat Nam, Vu Gia Hien, Pham Bao Lam, Nguyen Minh Hieu.
+*/
+
 
 /* ===== Global Styles ===== */
 * {
