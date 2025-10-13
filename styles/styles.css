@@ -118,8 +118,7 @@ main { /* Main page container */
     margin-bottom: 0.5rem;
 }
 
-.job-icon, .job-icon-listing { /* Job image icon */
-    width: 130px;
+.job-icon, .job-icon-listing {
     max-width: 100%;
     border-radius: 10px;
     object-fit: cover;
@@ -130,8 +129,8 @@ main { /* Main page container */
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 150px;
-    height: 150px;
+    width: 15%;
+    height: 15%;
     border: 2px solid #ccc;
 }
 
@@ -184,6 +183,7 @@ form { /* Form container layout */
 .formname { /* Form title alignment */
     text-align: center;
     padding-top: 90px;
+    color: white;
 }
 
 form label { /* Label styling */
@@ -278,7 +278,7 @@ legend { /* Fieldset title */
     justify-content: center;
     align-items: center;
     font-size: 1.6rem;
-    color: #0077b6;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -536,7 +536,11 @@ section h3 { /* Section heading */
     padding-top: 60px;
 }
 
-#about { /* About section container */
+section h1{
+    color: white;
+}
+
+#about {
     display: flex;
     padding-top: 60px;
     justify-content: center;
@@ -587,4 +591,19 @@ section h3 { /* Section heading */
 
 #Job-Application { /* Job application form spacing */
     padding-top: 90px;
+}
+
+section h1{
+    color: white;
+}
+body{
+    background-image: url('/styles/images/windows-hill-background-hcca6f6o2f8wup8h.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.about{
+    background-color: white;
+}
+.white-headings{
+    color: white
 }
