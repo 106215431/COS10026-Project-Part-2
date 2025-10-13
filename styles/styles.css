@@ -88,7 +88,7 @@ hr {
 
 /* === Main Content === */
 main {
-    max-width: 1100px;
+    max-width: 1500px;
     width: 100%;
     margin: 100px auto;
     padding: 2.5rem 1.5rem;
@@ -131,6 +131,7 @@ main {
     margin-bottom: 1rem;
 }
 
+/*Displays job images for job cards on the top right*/
 .job-icon-listing {
     position: absolute;
     top: 1rem;
@@ -140,6 +141,21 @@ main {
     border: 2px solid #ccc;
 }
 
+/*Flex display to keep job cards and aside on the same row*/
+.job-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+/*Keeps job cards in the 75% of the web page*/
+.job-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Apply button styling*/
 .apply-button, .apply-btn {
     display: inline-block;
     margin-top: 1em;
@@ -151,21 +167,22 @@ main {
     font-weight: 600;
     transition: background 0.3s ease;
 }
+
+/*Apply button hover effect*/
 .apply-button:hover, .apply-btn:hover {
     background-color: #0f8b8d;
     color: #fff;
 }
 
-/* === Sidebar === */
+/*Aside that takes up 25% of the job listing page*/
 aside {
     background: #e0f7fa;
     border-left: 4px solid #00b4d8;
     padding: 20px;
     border-radius: 10px;
-    margin: 40px auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    max-width: 350px;
-    width: 100%;
+    width: 25%;
+    flex-shrink: 0;
 }
 
 aside h3 {
