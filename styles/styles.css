@@ -169,70 +169,111 @@ aside h3 {
 }
 
 /* === Form === */
+/* === Form Container === */
 form {
-    max-width: 700px;
-    width: 100%;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: grid; /* ✅ display factor added */
+  grid-template-columns: 1fr 1fr; /* two columns for responsiveness */
+  gap: 20px; /* spacing between elements */
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.formname {
+    text-align: center;
+    padding-top: 90px;
+}
+
+/* Make labels and inputs stack properly */
 form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: 600;
+  display: block;
+  font-weight: 600;
+  margin-top: 8px;
 }
 
+/* Inputs, selects, textareas take full width of grid cell */
 form input[type="text"],
 form input[type="email"],
 form select,
 form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
 form textarea {
-    resize: vertical;
-    min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
+/* === Fieldset and legend === */
 fieldset {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 15px;
-    background: #f8fcff;
+  grid-column: 1 / 3; /* ✅ fieldsets span both columns */
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  background: #f8fcff;
 }
 
 legend {
-    font-weight: 600;
-    color: #0077b6;
+  font-weight: 600;
+  color: #0077b6;
 }
 
+/* Group checkboxes horizontally using flex */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+}
+
+/* === Submit Button === */
 .submit-btn {
-    text-align: center;
-    margin-top: 25px;
+  grid-column: 1 / 3; /* ✅ button centered across full form */
+  text-align: center;
+  margin-top: 25px;
 }
 
 .submit-btn button {
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
+
 .submit-btn button:hover {
-    background-color: #005f91;
+  background-color: #005f91;
 }
+
+/* === Responsive Design === */
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr; /* ✅ stack all items on small screens */
+    padding: 20px;
+  }
+
+  fieldset,
+  .submit-btn {
+    grid-column: 1 / 2;
+  }
+}
+
 
 /* === Members Section === */
 .members-section {
