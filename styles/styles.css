@@ -184,6 +184,7 @@ form {
 .formname {
     text-align: center;
     padding-top: 90px;
+    color: white;
 }
 
 /* Make labels and inputs stack properly */
@@ -285,7 +286,7 @@ legend {
     justify-content: center;
     align-items: center;
     font-size: 1.6rem;
-    color: #0077b6;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -625,4 +626,15 @@ section h1{
 
 section h1{
     color: white;
+}
+body{
+    background-image: url('/styles/images/windows-hill-background-hcca6f6o2f8wup8h.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.about{
+    background-color: white;
+}
+.white-headings{
+    color: white
 }
