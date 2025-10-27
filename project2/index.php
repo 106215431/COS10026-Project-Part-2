@@ -20,35 +20,35 @@
                 <h3>Cloud Engineer</h3>
                 <p>Melbourne, VIC</p>
                 <p><strong>$90k – $115k</strong></p>
-                <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/jobs.html#cloud-engineer" class="apply-btn">Check Now</a>
+                <a href="jobs.php#cloud-engineer" class="apply-btn">Check Now</a>
             </div>
 
             <div class="job-card">
                 <h3>Chief Technology Officer</h3>
                 <p>Melbourne, VIC</p>
                 <p><strong>$180k – $250k</strong></p>
-                <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/jobs.html#cto" class="apply-btn">Check Now</a>
+                <a href="jobs.php#cto" class="apply-btn">Check Now</a>
             </div>
 
             <div class="job-card">
                 <h3>Platform Engineer</h3>
                 <p>Queensland, QLD</p>
                 <p><strong>$100k – $120k</strong></p>
-                <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/jobs.html#platform-engineer" class="apply-btn">Check Now</a>
+                <a href="jobs.php#platform-engineer" class="apply-btn">Check Now</a>
             </div>
 
             <div class="job-card">
                 <h3>Cloud Architect / Solutions Architect</h3>
                 <p>Australian Capital Territory, ACT</p>
                 <p><strong>$130k – $160k</strong></p>
-                <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/jobs.html#cloud-architect" class="apply-btn">Check Now</a>
+                <a href="jobs.php#cloud-architect" class="apply-btn">Check Now</a>
             </div>
 
             <div class="job-card">
                 <h3>Cloud Consultant</h3>
                 <p>Tasmania, TAS</p>
                 <p><strong>$110k – $140k</strong></p>
-                <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/jobs.html#cloud-consultant" class="apply-btn">Check Now</a>
+                <a href="jobs.php#cloud-consultant" class="apply-btn">Check Now</a>
             </div>
         </div>
     </section>

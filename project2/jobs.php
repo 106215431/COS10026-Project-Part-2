@@ -31,7 +31,7 @@
       <li>Experience with Kubernetes or Terraform.</li>
     </ul>
 
-    <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/apply.html" class="apply-button">Apply Now</a>
+    <a href="apply.php" class="apply-button">Apply Now</a>
   </div>
   <img src="https://106215431.github.io/COS10026-Project-Part-2/images/cloud-engineer-2.jpg" alt="Cloud Support Engineer" class="job-icon-listing">
 </article>
@@ -62,7 +62,7 @@
       <li>Background in AI or enterprise-scale system modernization.</li>
     </ul>
 
-    <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/apply.html" class="apply-button">Apply Now</a>
+    <a href="apply.php" class="apply-button">Apply Now</a>
   </div>
   <img src="https://106215431.github.io/COS10026-Project-Part-2/images/cloud.png" alt="CTO" class="job-icon-listing">
 </article>
@@ -92,7 +92,7 @@
       <li>Knowledge of Terraform or scripting in Python/Bash.</li>
     </ul>
 
-    <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/apply.html" class="apply-button">Apply Now</a>
+    <a href="apply.php" class="apply-button">Apply Now</a>
   </div>
   <img src="https://106215431.github.io/COS10026-Project-Part-2/images/cloud-engineer.jpg" alt="Platform Engineer" class="job-icon-listing">
 </article>
@@ -122,7 +122,7 @@
       <li>AWS or Azure Solutions Architect certification.</li>
     </ul>
 
-    <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/apply.html" class="apply-button">Apply Now</a>
+    <a href="apply.php" class="apply-button">Apply Now</a>
   </div>
   <img src="https://106215431.github.io/COS10026-Project-Part-2/images/aws.png" alt="Cloud Architect" class="job-icon-listing">
 </article>
@@ -152,7 +152,7 @@
       <li>Cloud certification (AWS Solutions Architect or Azure Expert).</li>
     </ul>
 
-    <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/apply.html" class="apply-button">Apply Now</a>
+    <a href="apply.php" class="apply-button">Apply Now</a>
   </div>
   <img src="https://106215431.github.io/COS10026-Project-Part-2/images/cloud-consultant.jpg" alt="Cloud Consultant" class="job-icon-listing">
 </article>
