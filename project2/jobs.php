@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Job listing website">
-        <meta name="keywords" content="HTML5, Jobs, Unlimited Money Limited">
-        <link rel="stylesheet" href="https://106215431.github.io/COS10026-Project-Part-2/styles/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-        <title>Unlimited Money Limited</title>
-    </head>
-    
-    <body>
-        <header>
-        <!-- Navigation bar -->
-        <nav class="navbar">
-            <!-- Website logo / name (links to homepage) -->
-            <div class="logo"><a href="https://106215431.github.io/COS10026-Project-Part-2/project2/index.html">💰 Unlimited Money Ltd</a></div>
+<?php include 'header.inc'; ?>
 
-            <!-- Navigation links -->
-            <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/jobs.html">Job Listings</a>
-            <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/apply.html">Job Applications</a>
-            <a href="https://106215431.github.io/COS10026-Project-Part-2/project2/about.html">About Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <!-- Decorative line below navbar -->
-        <hr/>
-    </header>
+   <?php include 'nav.inc'; ?>
     <main>
         <div class="job-layout">
         <div class="job-list">
@@ -192,22 +168,4 @@
         </aside>
         </div>
     </main>
-        <footer class="footer">
-            <div id="contact">
-                <h2>Contact us</h2>
-                <a href="mailto:info@unlimitedmoneyltd.com.au">info@unlimitedmoneyltd.com.au</a>
-            <div id="contact">
-            <a href="https://106215431.github.io/COS10026-Project-Part-2" target="_blank">GitHub</a>
-        </div>
-            </div>
-            <div id="Jira">
-                <a href="https://seadog.atlassian.net/jira/software/projects/W0WTP/boards/4/backlog">https://seadog.atlassian.net/jira/software/projects/W0WTP/boards/4/backlog</a>
-            </div>
-        </footer>
-    </body>
-    <!-- 
-  Portions of this HTML code were generated with assistance from 
-  ChatGPT (GPT-5) and/or GitHub Copilot.
-  Reviewed, modified, and approved by Pham Bao Lam, Vu Gia Hien, Ngo Nhat Nam, Nguyen Minh Hieu.
--->
-</html>
+      <?php include 'footer.inc'; ?>
