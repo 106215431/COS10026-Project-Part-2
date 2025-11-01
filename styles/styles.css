@@ -26,6 +26,7 @@ body {
     background-image: url('https://106215431.github.io/COS10026-Project-Part-2/styles/images/webbg.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* === Typography === */
