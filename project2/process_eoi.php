@@ -147,7 +147,7 @@ if (!empty($errors)) {
 foreach ($errors as $err) echo "<li>$err</li>";
 echo "  </ul>
         </div>
-        <a href='apply.html' class='return-link'>Go back and fix the form</a>
+        <a href='apply.php' class='return-link'>Go back and fix the form</a>
       </div>";
 
     exit();
