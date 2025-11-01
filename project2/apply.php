@@ -3,7 +3,7 @@
    <?php include 'nav.inc'; ?>
   <section>
   <h1 class="formname">Job Application Form</h1>
-  <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+  <form action='process_eoi.php' method="post" novalidate = 'novalidate'>
     <!-- Job Reference -->
     <label for="jobRef">Job Reference Number:</label>
     <select id="jobRef" name="jobRef" required>
