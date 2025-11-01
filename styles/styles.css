@@ -306,7 +306,8 @@ legend {
 }
 
 .submit-btn button:hover {
-  background-color: #005f91;
+  background-color: #0f8b8d;
+    color: #fff;
 }
 
 /* === Responsive Design === */
@@ -771,5 +772,6 @@ tr td:hover{
 }
 
 .return-link:hover {
-    background: #005f73;
+   background-color: #0f8b8d;
+   color: #fff;
 }

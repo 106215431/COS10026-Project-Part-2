@@ -3,7 +3,7 @@
 // Prevent direct URL access
 // -------------------------
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: apply.php");
+    header("Location: apply.html");
     exit();
 }
 
@@ -20,7 +20,7 @@ if (!$conn) {
 echo "<!DOCTYPE html><html lang='en'><head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link rel='stylesheet' href='https://106215431.github.io/COS10026-Project-Part-2/styles/styles.css'>
+<link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
 <title>EOI Submission</title>
 </head><body>";
 
@@ -132,7 +132,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email addre
 if (!preg_match("/^[0-9 ]{8,12}$/", $phone)) $errors[] = "Phone must contain 8–12 digits (numbers or spaces).";
 
 // Skills
-if (empty($skills)) $errors[] = "At least one technical skill must be selected.";
+// ================================
+// Technical Skills & Other Skills Validation
+// ================================
+if (empty($skills) && (empty($otherSkills) || trim($otherSkills) === "")) {
+    $errors[] = "You must either select at least one technical skill or describe your skills in the Other Skills field.";
+}
+
 if (in_array("Other", $skills) && empty($otherSkills)) $errors[] = "Please specify your other skills.";
 
 // -------------------------
@@ -147,7 +153,7 @@ if (!empty($errors)) {
 foreach ($errors as $err) echo "<li>$err</li>";
 echo "  </ul>
         </div>
-        <a href='apply.php' class='return-link'>Go back and fix the form</a>
+        <a href='apply.php' class='return-link'>Redo Application</a>
       </div>";
 
     exit();
@@ -180,7 +186,8 @@ CREATE TABLE IF NOT EXISTS eoi (
   skill2 VARCHAR(50) DEFAULT NULL,
   skill3 VARCHAR(50) DEFAULT NULL,
   skill4 VARCHAR(50) DEFAULT NULL,
-  otherSkills VARCHAR(200)
+  otherSkills VARCHAR(200),
+  status VARCHAR(20) NOT NULL DEFAULT 'New' 
 ) ENGINE=InnoDB;
 ";
 
@@ -198,15 +205,18 @@ $skill4 = $skills[3] ?? NULL;
 // Insert data into eoi table
 // -------------------------
 $insert_sql = "INSERT INTO eoi
-(jobRef, firstName, lastName, dob, gender, streetAddress, suburb, state, postcode, email, phone, skill1, skill2, skill3, skill4, otherSkills)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+(jobRef, firstName, lastName, dob, gender, streetAddress, suburb, state, postcode, email, phone, skill1, skill2, skill3, skill4, otherSkills, status)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
 
 $stmt = mysqli_prepare($conn, $insert_sql);
-mysqli_stmt_bind_param($stmt, 'ssssssssssssssss',
+$status = 'New';
+mysqli_stmt_bind_param($stmt, 'sssssssssssssssss',
     $jobRef, $firstName, $lastName, $dob_mysql, $gender,
     $address, $suburb, $state, $postcode, $email, $phone,
-    $skill1, $skill2, $skill3, $skill4, $otherSkills
+    $skill1, $skill2, $skill3, $skill4, $otherSkills, $status
 );
+
 
 if (mysqli_stmt_execute($stmt)) {
     $eoiNumber = mysqli_insert_id($conn);
@@ -221,7 +231,10 @@ if (mysqli_stmt_execute($stmt)) {
 } else {
     echo "<p>Something went wrong while submitting your application. Please try again.</p>";
 }
+
+
 echo "</body></html>";
+
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
 ?>
