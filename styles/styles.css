@@ -705,3 +705,70 @@ tr td:hover{
     color: #0077b6;
     font-weight: 500;
 }
+
+/* === EOI Confirmation & Error Pages === */
+.response-container {
+    max-width: 700px;
+    margin: 120px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.response-container h2 {
+    font-size: 1.8rem;
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+.response-container p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.success-message {
+    border-left: 6px solid #2ecc71;
+    background-color: #e8fdf2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #155724;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.error-message {
+    border-left: 6px solid #e74c3c;
+    background-color: #ffe8e8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #8b0000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.response-container ul {
+    list-style-type: disc;
+    text-align: left;
+    margin: 20px auto;
+    display: inline-block;
+    color: #8b0000;
+}
+
+.return-link {
+    display: inline-block;
+    background: #0077b6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.return-link:hover {
+    background: #005f73;
+}
