@@ -3,7 +3,7 @@
 // Prevent direct URL access
 // -------------------------
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: apply.html");
+    header("Location: apply.php");
     exit();
 }
 
