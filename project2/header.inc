@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Job listing website">
     <meta name="keywords" content="HTML5, Jobs, Unlimited Money Limited">
-    <link rel="stylesheet" href="http://localhost/COS10026-Project-Part-2/styles/styles.css">
+    <link rel="stylesheet" href="/COS10026-Project-Part-2/styles/styles.css?v=4">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Unlimited Money Limited</title>
 </head>
@@ -13,4 +13,4 @@
   ChatGPT (GPT-5) and/or GitHub Copilot.
   Reviewed, modified, and approved by Pham Bao Lam, Vu Gia Hien, Ngo Nhat Nam, Nguyen Minh Hieu.
 -->
-<body>
+<body> 
