@@ -1,5 +1,5 @@
 <?php include 'header.inc'; ?>
-<?php include 'manage-nav.inc'; ?>
+<?php include 'nav.inc'; ?>
 <?php require_once("manage_settings.php"); ?>
 
 <!DOCTYPE html>
