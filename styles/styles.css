@@ -483,6 +483,7 @@ td, th {
     border-top: 3px solid #90e0ef;
     margin-top: 2rem;
     width: 100%;
+    margin: 0;
 }
 
 .footer h2 {
@@ -775,3 +776,32 @@ tr td:hover{
    background-color: #0f8b8d;
    color: #fff;
 }
+body {
+        font-family: Arial, sans-serif;
+        
+    }
+.section-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background: #f9f9f9;
+        margin: 20px;
+    }
+.section-box h2 {
+        margin-top: 0;
+    }
+label { font-weight: bold; }
+input[type=text], select {
+        padding: 8px;
+        width: 250px;
+    }
+button {
+        padding: 8px 14px;
+        cursor: pointer;
+        background: #007bff;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+    }
+button:hover { background: #0056b3; }
