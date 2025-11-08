@@ -1,10 +1,7 @@
     <header>
         <nav class="navbar">
             <div class="logo"><a href="index.php">💰 Unlimited Money Ltd</a></div>
-            <a href="jobs.php">Job Listings</a>
-            <a href="apply.php">Job Applications</a>
-            <a href="about.php">About Us</a>
-            <a href="login.php">zLog in</a>
+            <a href='login.php''> Log out </a>
             <a href="#contact">Contact</a>
         </nav>
         <hr/>
