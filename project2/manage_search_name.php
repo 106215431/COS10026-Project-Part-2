@@ -1,4 +1,6 @@
-<?php include 'header.inc'; ?>
+<?php include 'header.inc';
+include 'manage-nav.inc'; ?>
+
 <?php
 require_once("manage_settings.php");   // Include database connection settings
 

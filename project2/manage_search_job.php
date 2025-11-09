@@ -1,6 +1,6 @@
 <?php
 include 'header.inc';
-include 'nav.inc';
+include 'manage-nav.inc';
 require_once("manage_settings.php");
 
 // Read jobRef from GET parameter

@@ -1,5 +1,6 @@
 <?php
 include 'header.inc';
+include 'manage-nav.inc';
 require_once("manage_settings.php");
 
 // Read jobRef from POST parameter

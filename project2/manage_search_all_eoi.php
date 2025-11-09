@@ -7,7 +7,7 @@
 include 'header.inc';
 
 // Include navigation bar
-include 'nav.inc';
+include 'manage-nav.inc';
 
 // Include database connection settings (creates $conn)
 require_once("manage_settings.php");
@@ -85,7 +85,7 @@ echo "<h2>All EOIs (Sorted by $sortby $order)</h2>";
 <!--   SORTING FORM (Displayed above the results table)  -->
 <!-- =================================================== -->
 
-<form action="search_all_eoi.php" method="get">
+<form action="manage_search_all_eoi.php" method="get">
 
     <!-- Sorting Column Dropdown -->
     <label><strong>Sort by:</strong></label><br>

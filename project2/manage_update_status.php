@@ -1,5 +1,6 @@
 <?php
 include 'header.inc';
+include 'manage-nav.inc';
 require_once("manage_settings.php");
 
 // Read the EOI number and new status from POST form
