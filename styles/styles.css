@@ -805,7 +805,6 @@ button {
         border-radius: 5px;
     }
 button:hover { background: #0056b3; }
-.section-box { border:1px solid #ddd; padding:14px; margin:14px 0; border-radius:10px; }
 .inline { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 fieldset.sort { border:1px dashed #bbb; padding:10px; border-radius:8px; }
 fieldset.sort legend { font-weight:600; }
