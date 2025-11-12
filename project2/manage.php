@@ -11,6 +11,13 @@
 <body>
 
 <h1>EOI Management Panel</h1>
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: manager_login_form.php");
+    exit();
+}
+?>
 
 <!-- Helper: Sort Options (reuse this chunk across forms) -->
 <?php function sort_controls() { ?>
