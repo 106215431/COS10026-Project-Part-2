@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2025 at 05:45 AM
+-- Generation Time: Nov 13, 2025 at 08:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -87,6 +87,25 @@ INSERT INTO `jobs` (`job_id`, `job_title`, `reference_number`, `company_name`, `
 (4, 'Cloud Architect / Solutions Architect', 'CA-ACT-2231', 'TechCorp Australia', 'Australian Capital Territory, ACT', '$130,000 – $160,000 / year', 'Head of Cloud Engineering', 'Full-time', 'We are seeking a Cloud Architect to design secure, scalable, and cost-efficient cloud systems.\r\n\r\nKey Responsibilities:\r\n- Design and implement multi-cloud architectures aligned with business goals.\r\n- Provide technical guidance to cloud engineering teams.\r\n\r\nEssential Requirements:\r\n- Experience designing cloud infrastructure at enterprise level.\r\n\r\nPreferable Requirements:\r\n- AWS or Azure Solutions Architect certification.', 'https://106215431.github.io/COS10026-Project-Part-2/images/aws.png'),
 (5, 'Cloud Consultant', 'CC-TAS-773', 'TechCorp Australia', 'Tasmania, TAS', '$110,000 – $140,000 / year', 'Principal Cloud Architect', 'Full-time', 'We are looking for a Cloud Consultant to help clients plan, migrate, and optimize their cloud solutions.\r\n\r\nKey Responsibilities:\r\n- Advise clients on cloud adoption, cost management, and best practices.\r\n- Prepare reports and documentation for technical recommendations.\r\n\r\nEssential Requirements:\r\n- Strong knowledge of AWS or Azure cloud architecture.\r\n\r\nPreferable Requirements:\r\n- Cloud certification (AWS Solutions Architect or Azure Expert).', 'https://106215431.github.io/COS10026-Project-Part-2/images/cloud-consultant.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `managers`
+--
+
+CREATE TABLE `managers` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `managers`
+--
+
+INSERT INTO `managers` (`id`, `username`, `password`) VALUES
+(1, 'hiner', '$2y$10$QMEL6l1cC7t7I2L75ph1zeArOjnty6AfvsSmsa0IUFozdXzkTsUoK');
+
 --
 -- Indexes for dumped tables
 --
@@ -104,6 +123,13 @@ ALTER TABLE `jobs`
   ADD PRIMARY KEY (`job_id`);
 
 --
+-- Indexes for table `managers`
+--
+ALTER TABLE `managers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -118,6 +144,12 @@ ALTER TABLE `eoi`
 --
 ALTER TABLE `jobs`
   MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `managers`
+--
+ALTER TABLE `managers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

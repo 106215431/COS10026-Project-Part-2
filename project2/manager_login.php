@@ -60,7 +60,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
 
         echo "<!DOCTYPE html><html lang='en'><head>
         <meta charset='UTF-8'>
-        <link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+        <link rel='stylesheet' href='../styles/styles.css'>
         <title>Login Successful</title>
         </head><body>
         <div class='response-container'>
@@ -75,7 +75,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         // Invalid password
         echo "<!DOCTYPE html><html lang='en'><head>
         <meta charset='UTF-8'>
-        <link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+        <link rel='stylesheet' href='../styles/styles.css'>
         <title>Login Failed</title>
         </head><body>
         <div class='response-container'>
@@ -91,7 +91,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
     // Username not found
     echo "<!DOCTYPE html><html lang='en'><head>
     <meta charset='UTF-8'>
-    <link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+    <link rel='stylesheet' href='../styles/styles.css'>
     <title>Login Failed</title>
     </head><body>
     <div class='response-container'>
