@@ -50,7 +50,7 @@
       <figcaption>
         <dl>
           <dt>Pham Bao Lam</dt>
-          <dd>About page designer + Project manager / Overall checker</dd>
+          <dd>About page designer + Project manager / Overall checker-Manage.php and related function</dd>
           
         </dl>
       </figcaption>
@@ -61,7 +61,7 @@
       <figcaption>
         <dl>
           <dt>Vu Gia Hien</dt>
-          <dd>Apply website designer + server linking</dd>
+          <dd>Apply website designer + server linking+Apply form, process eoi, login/logout</dd>
           
         </dl>
       </figcaption>
@@ -72,7 +72,7 @@
       <figcaption>
         <dl>
           <dt>Ngo Nhat Nam</dt>
-          <dd>Job information researcher + job lists designer</dd>
+          <dd>Job information researcher and job lists designer+jobs php and flexing muscle</dd>
           
         </dl>
       </figcaption>
@@ -83,7 +83,9 @@
       <figcaption>
         <dl>
           <dt>Nguyen Minh Hieu</dt>
-          <dd>Main page designer</dd>
+          <dd>Main page designer-update about page-presentation maker
+
+          </dd>
          
         </dl>
       </figcaption>
