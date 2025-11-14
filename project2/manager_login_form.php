@@ -1,14 +1,5 @@
-<<<<<<< HEAD
 <?php include 'header.inc'; ?>
 <?php include 'nav.inc'; ?>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Manager Login</title>
-<link rel='stylesheet' href='../styles/styles.css'>
->>>>>>> 212e315a7b067e61f12e7807763f01f3c39984a4
 </head>
 <body>
 
@@ -24,7 +15,18 @@
     <div class="submit-btn">
         <button type="submit">Login</button>
     </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </form>
-
+<?php include 'footer.inc'; ?>
 </body>
 </html>

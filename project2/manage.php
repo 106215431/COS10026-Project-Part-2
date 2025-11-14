@@ -1,6 +1,6 @@
 <?php include 'header.inc'; ?>
 <?php include 'manage-nav.inc'; ?>
-<?php require_once("manage_settings.php"); ?>
+<?php require_once("settings.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
