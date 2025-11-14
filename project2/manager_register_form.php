@@ -15,17 +15,7 @@
         <button type="submit">Register</button>
     </div>
 </form>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class='empty'></div>
 <?php include 'footer.inc'; ?>
 </body>
 </html>

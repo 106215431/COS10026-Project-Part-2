@@ -1,6 +1,5 @@
 <?php include 'header.inc'; ?>
-
-   <?php include 'nav.inc'; ?>
+<?php include 'nav.inc'; ?>
     <!-- Course + Group Info -->
     <section>
         <h1 id="about">About Us</h1>
