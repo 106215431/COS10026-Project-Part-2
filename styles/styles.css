@@ -811,3 +811,6 @@ fieldset.sort legend { font-weight:600; }
 label { font-weight:600; }
 select, input[type="text"] { padding:6px; }
 button { padding:8px 14px; cursor:pointer; }
+.footer{
+    padding-top: 500px;
+}
