@@ -15,18 +15,9 @@
     <div class="submit-btn">
         <button type="submit">Login</button>
     </div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</form>
+
+</form>    
+    <div class='empty'></div>
 <?php include 'footer.inc'; ?>
 </body>
 </html>
