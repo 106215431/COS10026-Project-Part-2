@@ -17,7 +17,16 @@
     </div>
 
 </form>    
-    <div class='empty'></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 <?php include 'footer.inc'; ?>
 </body>
 </html>
