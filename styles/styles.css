@@ -625,7 +625,7 @@ section h1 {
 }
 
 #about {
-    color: #0077b6;
+    color: #ffffff;
     display: flex;
     padding-top: 60px;
     justify-content: center;
@@ -685,7 +685,7 @@ section h1 {
 .white-headings {
     color: #002244;
     font-weight: bold;
-    text-shadow: 1px 1px 2px #005f73;
+    text-shadow: 1px 1px 2px #ffffff;
 }
 tr td:hover{
     opacity: 0.8;
