@@ -49,7 +49,7 @@
       <figcaption>
         <dl>
           <dt>Pham Bao Lam</dt>
-          <dd>About page designer + Project manager / Overall checker-Manage.php and related function</dd>
+          <dd>About page designer + Project manager / Overall checker-Create a jobs table and display the jobs in jobs.php by retrieving them from the database.</dd>
           
         </dl>
       </figcaption>
