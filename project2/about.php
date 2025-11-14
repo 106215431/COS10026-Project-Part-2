@@ -93,7 +93,7 @@
 
   <!-- Group Photo -->
   <figure class="group-photo">
-    <img src="https://106215431.github.io/COS10026-Project-Part-2/images/group-image.jpg" alt="Group photo" id="group-photo">
+    <img src="https://github.com/106215431/COS10026-Project-Part-2/blob/main/images/group-image.png?raw=true alt="Group photo" id="group-photo">
     <figcaption id="group-photo-cap">
       Group photo, left to right: Nam, Hien, Lam, Hieu
     </figcaption>
