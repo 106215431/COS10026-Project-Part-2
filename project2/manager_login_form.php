@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Manager Login</title>
-<link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+<?php include 'header.inc'; ?>
+<?php include 'nav.inc'; ?>
 </head>
 <body>
 

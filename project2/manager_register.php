@@ -57,7 +57,7 @@ if (empty($password)) {
 if (!empty($errors)) {
     echo "<!DOCTYPE html><html lang='en'><head>
     <meta charset='UTF-8'>
-    <link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+    <link rel='stylesheet' href='../styles/styles.css'>
     <title>Registration Failed</title>
     </head><body>
     <div class='response-container'>
@@ -97,7 +97,7 @@ mysqli_stmt_store_result($stmt);
 if (mysqli_stmt_num_rows($stmt) > 0) {
     echo "<!DOCTYPE html><html lang='en'><head>
     <meta charset='UTF-8'>
-    <link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+    <link rel='stylesheet' href='../styles/styles.css'>
     <title>Registration Failed</title>
     </head><body>
     <div class='response-container'>
@@ -122,7 +122,7 @@ mysqli_stmt_bind_param($stmt_insert, 'ss', $username, $hashedPassword);
 if (mysqli_stmt_execute($stmt_insert)) {
     echo "<!DOCTYPE html><html lang='en'><head>
     <meta charset='UTF-8'>
-    <link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+    <link rel='stylesheet' href='../styles/styles.css'>
     <title>Registration Successful</title>
     </head><body>
     <div class='response-container'>

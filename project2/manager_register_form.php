@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Manager Registration</title>
-<link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
-</head>
+<?php include 'header.inc'; ?>
+<?php include 'nav.inc'; ?>
 <body>
 
 <h1 class="formname">Manager Registration</h1>
