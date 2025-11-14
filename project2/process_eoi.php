@@ -20,7 +20,7 @@ if (!$conn) {
 echo "<!DOCTYPE html><html lang='en'><head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link rel='stylesheet' href='http://localhost/COS10026-Project-Part-2/styles/styles.css'>
+<link rel='stylesheet' href='../styles/styles.css'>
 <title>EOI Submission</title>
 </head><body>";
 
