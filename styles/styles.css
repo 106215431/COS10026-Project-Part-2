@@ -812,7 +812,5 @@ label { font-weight:600; }
 select, input[type="text"] { padding:6px; }
 button { padding:8px 14px; cursor:pointer; }
 .empty {
-width: 100%;
-height: 50px;
 padding: 500px;
 }
