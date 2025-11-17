@@ -236,8 +236,9 @@ form::before {
 .formname {
     text-align: center;
     padding-top: 90px;
-    color: #0077b6;
+    color: #ffffff;
     font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
 }
 
 form label {
@@ -333,7 +334,10 @@ legend {
     justify-content: center;
     align-items: center;
     font-size: 1.6rem;
-    color: #0077b6;
+    color: #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
     margin-bottom: 20px;
 }
 
@@ -415,7 +419,7 @@ figure.stuid {
 #group-photo-cap {
     display: flex;
     justify-content: center;
-    color: #005f73;
+    color: #ffffff;
     font-style: italic;
     margin-top: 10px;
     text-align: center;
@@ -431,10 +435,6 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* Members Section Title: improved contrast */
-.members-list-title {
-    color: #005f73;
-}
 
 
 /* Footer links: visible focus */
@@ -626,6 +626,8 @@ section h1 {
 
 #about {
     color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
     display: flex;
     padding-top: 60px;
     justify-content: center;
@@ -683,9 +685,9 @@ section h1 {
 }
 
 .white-headings {
-    color: #002244;
+    color: #ffffff;
     font-weight: bold;
-    text-shadow: 1px 1px 2px #ffffff;
+    text-shadow: 1px 1px 2px #000000;
 }
 tr td:hover{
     opacity: 0.8;
