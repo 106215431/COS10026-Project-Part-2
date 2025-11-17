@@ -6,11 +6,11 @@
         <div class="course-info">
             <h3>Course + Tutor's name</h3>
             <p>This website is made as a project submission of group 6 for Project part 1 in class COS10025.3 taught by Mr. Vu Ngoc Binh</p>
-            <h3>Group 6 - COS10025</h3>
+            <h3>Group 6 - COS10026</h3>
             <ul>
                 <li>Class Information
                     <ul>
-                        <li>Class Code: COS10025</li>
+                        <li>Class Code: COS10026</li>
                         <li>Time: 14:00 - 17:00</li>
                         <li>Day: Friday</li>
                     </ul>
