@@ -14,7 +14,7 @@ echo "<h2 class = 'formname'>Delete EOIs</h2>";
 // Ensure request method is POST to prevent accidental GET deletions
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     // Inform user to submit the form correctly and stop further processing
-    echo "<div class='empty-box'><p>Please submit the form to delete EOIs.</p></div>";
+    echo "<div class='no-results-box'><p>Please submit the form to delete EOIs.</p></div>";
     echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
     echo "</div></div>";
     include 'footer.inc';
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $jobRef = trim($_POST['jobRef'] ?? '');
 if ($jobRef === '') {
     // If empty, prompt user and exit
-    echo "<div class='empty-box'><p>Please enter a job reference.</p></div>";
+    echo "<div class='no-results-box'><p>Please enter a job reference.</p></div>";
     echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
     echo "</div></div>";
     include 'footer.inc';
@@ -37,7 +37,7 @@ $sql = "DELETE FROM eoi WHERE jobRef = ?";
 $stmt = mysqli_prepare($conn, $sql);
 if ($stmt === false) {
     // Handle database prepare error
-    echo "<div class='empty-box'><p class='error'>Database error (prepare failed).</p></div>";
+    echo "<div class='no-results-box'><p class='error'>Database error (prepare failed).</p></div>";
 } else {
     // Bind parameter as string and execute; "s" indicates string type
     mysqli_stmt_bind_param($stmt, "s", $jobRef);

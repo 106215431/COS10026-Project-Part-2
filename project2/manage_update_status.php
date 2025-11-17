@@ -14,7 +14,7 @@ echo "<h2 class = 'formname'>Update EOI Status</h2>";
 // Require POST to avoid accidental updates via GET (safer)
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     // Inform user to submit the form correctly and exit
-    echo "<div class='empty-box'><p>Please submit the status update form.</p></div>";
+    echo "<div class='no-results-box'><p>Please submit the status update form.</p></div>";
     echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
     echo "</div></div>";
     include 'footer.inc';
@@ -26,7 +26,7 @@ $eoi = trim($_POST['eoinumber'] ?? '');
 $status = trim($_POST['status'] ?? '');
 // Validate that both fields are present
 if ($eoi === '' || $status === '') {
-    echo "<div class='empty-box'><p>EOI Number and Status are required.</p></div>";
+    echo "<div class='no-results-box'><p>EOI Number and Status are required.</p></div>";
     echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
     echo "</div></div>";
     include 'footer.inc';
@@ -38,7 +38,7 @@ $sql = "UPDATE eoi SET status = ? WHERE EOInumber = ?";
 $stmt = mysqli_prepare($conn, $sql);
 if ($stmt === false) {
     // Prepare failed — show basic error; in production, log details instead
-    echo "<div class='empty-box'><p class='error'>Database error (prepare failed).</p></div>";
+    echo "<div class='no-results-box'><p class='error'>Database error (prepare failed).</p></div>";
 } else {
     // Cast EOInumber to integer to ensure correct type; (int) will produce 0 if invalid
     $eoiInt = (int)$eoi;

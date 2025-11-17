@@ -23,7 +23,7 @@ $stmt = mysqli_prepare($conn, $sql);
 // If prepare fails, inform user (mysqli_prepare returns false on error)
 if ($stmt === false) {
     // Show DB prepare error (keeps logic simple; in production log error)
-    echo "<div class='empty-box'><p>Database error (prepare failed).</p></div>";
+    echo "<div class='no-results-box'><p>Database error (prepare failed).</p></div>";
 } else {
     // Bind the jobRef parameter as string ("s") to the prepared statement
     mysqli_stmt_bind_param($stmt, "s", $jobRef);

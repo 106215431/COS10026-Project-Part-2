@@ -70,7 +70,7 @@ if ($category === 'firstname') {
 
 } else {
     // Invalid category provided — show error and exit
-    echo "<div class='empty-box'><p class='error'>Invalid category.</p></div>";
+    echo "<div class='no-results-box'><p class='error'>Invalid category.</p></div>";
     echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
     echo "</div></div>";
     include 'footer.inc';
