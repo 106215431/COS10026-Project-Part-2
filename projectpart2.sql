@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2025 at 08:09 AM
+-- Generation Time: Nov 17, 2025 at 02:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,7 +55,12 @@ CREATE TABLE `eoi` (
 INSERT INTO `eoi` (`EOInumber`, `jobRef`, `firstName`, `lastName`, `dob`, `gender`, `streetAddress`, `suburb`, `state`, `postcode`, `email`, `phone`, `skill1`, `skill2`, `skill3`, `skill4`, `otherSkills`, `status`) VALUES
 (1, 'CE-VIC-1025', 'sdssdsd', 'dsdsds', '2002-12-12', 'Female', 'dssddad', 'sadsadad', 'VIC', '3008', 'hienvgh@gmail.com', '904771558', 'Networking', 'Cybersecurity', NULL, NULL, 'dsdsdsdsds', 'New'),
 (2, 'PE-QLD-1243', 'sdss', 'dsdsdsd', '2002-12-13', 'Other', '123 titan street', 'dsdsdsd', 'ACT', '0038', 'haireif@gmail.com', '904771558', 'Programming', NULL, NULL, NULL, '', 'New'),
-(3, 'CC-TAS-773', 'Vu', 'Vui', '2888-03-10', 'Male', '67 sigma street', 'what town', 'SA', '5111', 'hairyeif@gmail.com', '969767065', NULL, NULL, NULL, NULL, 'uh i have uh gaming laptop pls accept', 'New');
+(3, 'CC-TAS-773', 'Vu', 'Vui', '2888-03-10', 'Male', '67 sigma street', 'what town', 'SA', '5111', 'hairyeif@gmail.com', '969767065', NULL, NULL, NULL, NULL, 'uh i have uh gaming laptop pls accept', 'New'),
+(4, 'CTO-VIC-78', 'cuznamnit', 'wasalittlegirl', '2222-12-22', 'Female', 'idek', 'somewhere on earth', 'TAS', '7777', 'i_love_web_development@swinburne.com', '973529546', 'Networking', 'Programming', NULL, NULL, 'he plays roblox', 'New'),
+(5, 'PE-QLD-1243', 'Nam', 'Nit', '2888-03-10', 'Other', 'Address is address', 'town', 'SA', '5555', 'iwishuamerrychristmas@yahoo.com', '999999999', 'Networking', NULL, NULL, NULL, '', 'New'),
+(6, 'CTO-VIC-78', 'Minh', 'Hieu', '0000-01-12', 'Female', 'type shit street', 'i live in the earth', 'ACT', '0111', 'haireif@gmail.com', '9045555555', 'Networking', NULL, NULL, NULL, 'idk', 'New'),
+(7, 'CTO-VIC-78', 'turnt', 'titan', '1222-12-12', 'Female', 'giant street', 'giant city', 'VIC', '3882', 'titan@titan.com', '99999991', 'Networking', 'Cybersecurity', 'Programming', NULL, 'im so op', 'New'),
+(8, 'CE-VIC-1025', 'lam', 'sybau', '1234-11-11', 'Female', '134 titan street', 'australian mate', 'QLD', '4259', 'haireif2@gmail.com', '973529546', NULL, NULL, NULL, NULL, 'i can build legos', 'New');
 
 -- --------------------------------------------------------
 
@@ -104,7 +109,9 @@ CREATE TABLE `managers` (
 --
 
 INSERT INTO `managers` (`id`, `username`, `password`) VALUES
-(1, 'hiner', '$2y$10$QMEL6l1cC7t7I2L75ph1zeArOjnty6AfvsSmsa0IUFozdXzkTsUoK');
+(1, 'hiner', '$2y$10$QMEL6l1cC7t7I2L75ph1zeArOjnty6AfvsSmsa0IUFozdXzkTsUoK'),
+(2, 'manager', '$2y$10$8M3iT6VFVb6jMc5JnrGkjeSedAnrgVd3Sbb6zSAhn3Frl6SXAieZy'),
+(3, 'namnitmuscular', '$2y$10$VFhvG9nF548EhDeJY1D8XeTy7mCyFExteeUhUf0xp8dT54vkrDbLq');
 
 --
 -- Indexes for dumped tables
@@ -137,7 +144,7 @@ ALTER TABLE `managers`
 -- AUTO_INCREMENT for table `eoi`
 --
 ALTER TABLE `eoi`
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -149,7 +156,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `managers`
 --
 ALTER TABLE `managers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
