@@ -1,38 +1,42 @@
 <?php
 // Page to display all EOIs with optional sorting
+
+// Include header and management navigation partials
 include 'header.inc';
 include 'manage-nav.inc';
+
+// Require DB settings/connection; $conn should be created by this file
 require_once("manage_settings.php");
 
-// Small CSS to push footer to bottom and style empty box / table
+// Open page wrapper container for layout
 echo "<div class='page-wrapper'>";
 
-// Allowed sort fields to prevent SQL injection via column names.
-// Whitelisting column names ensures safe concatenation into ORDER BY.
+// Allowed sort fields whitelist: prevents SQL injection via ORDER BY column injection.
+// Only these exact column names will be accepted.
 $allowedSortFields = [
     'EOInumber', 'jobRef', 'firstName', 'lastName',
     'dob', 'gender', 'streetAddress', 'suburb',
     'state', 'postcode', 'email', 'phone', 'status'
 ];
 
-// Read sort parameters from GET with defaults
+// Read sorting parameters from GET; provide defaults if not present
 $sortby = $_GET['sortby'] ?? 'EOInumber';
 $order  = $_GET['order'] ?? 'ASC';
 
-// Validate sort column against whitelist and default if invalid
+// Validate that provided sort column is in the whitelist; if not, fallback to default
 if (!in_array($sortby, $allowedSortFields)) {
     $sortby = 'EOInumber';
 }
-// Only allow ASC or DESC (default to ASC)
+
+// Only allow 'DESC' to set descending; anything else becomes 'ASC'
 $order = ($order === 'DESC') ? 'DESC' : 'ASC';
 
-// Build and execute query using validated column and order
-// Note: column and order are validated above, so concatenation here is acceptable
+// Build query using the validated column and order. This is safe because both values were validated.
 $sql = "SELECT * FROM eoi ORDER BY $sortby $order";
 $result = mysqli_query($conn, $sql);
 
 ?>
-<!-- Form to allow users to change sorting -->
+<!-- Sorting form: GET is used so users can bookmark sorted URLs -->
 <form action="manage_search_all_eoi.php" method="get">
     <label><strong>Sort by:</strong></label><br>
     <select name="sortby">
@@ -67,9 +71,8 @@ $result = mysqli_query($conn, $sql);
 <br><br>
 
 <?php
-// If result set contains rows, render an HTML table
+// If the query returns rows, render them in an HTML table
 if ($result && mysqli_num_rows($result) > 0) {
-    // Header row
     echo "<table class='data-table'>
             <tr>
                 <th>EOI Number</th><th>Job Ref</th><th>First Name</th><th>Last Name</th>
@@ -78,8 +81,8 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <th>Skill 1</th><th>Skill 2</th><th>Skill 3</th><th>Skill 4</th>
                 <th>Other Skills</th><th>Status</th>
             </tr>";
-    // Loop through rows and escape output to prevent XSS
-    // Reused pattern: htmlspecialchars($row['col'], ENT_QUOTES, 'UTF-8') for each cell
+    // Reused escaping pattern: htmlspecialchars($row['col'], ENT_QUOTES, 'UTF-8') is applied to every cell
+    // This converts special characters to HTML entities and prevents XSS when printing DB content into HTML.
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
                 <td>" . htmlspecialchars($row['EOInumber'], ENT_QUOTES, 'UTF-8') . "</td>
@@ -104,17 +107,15 @@ if ($result && mysqli_num_rows($result) > 0) {
     }
     echo "</table>";
 } else {
-   // No rows found
+   // No records found message
    echo "<div class='no-results-box'>No EOIs found.</div>" ;
 }
 
-// Return link and close containers
+// Link back to management home, close content containers and DB connection
 echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
 echo "</div></div>";
 
-// Close DB and wrapper
 mysqli_close($conn);
 echo "</div>"; // close wrapper
-
 
 ?>
