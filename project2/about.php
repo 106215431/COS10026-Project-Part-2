@@ -49,7 +49,7 @@
       <figcaption>
         <dl>
           <dt>Pham Bao Lam</dt>
-          <dd>About page designer + Project manager / Overall checker-Manage.php and related function</dd>
+          <dd>About page designer + Project manager / Overall checker-Create an EOI table and manage.php with all of the functions</dd>
           
         </dl>
       </figcaption>

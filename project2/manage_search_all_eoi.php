@@ -1,93 +1,43 @@
 <?php
-/*******************************************************
- * INCLUDE PAGE SECTIONS AND DATABASE CONNECTION
- *******************************************************/
+// Page to display all EOIs with optional sorting
 
-// Include the common header HTML
+// Include header and management navigation partials
 include 'header.inc';
-
-// Include navigation bar
 include 'manage-nav.inc';
 
-// Include database connection settings (creates $conn)
+// Require DB settings/connection; $conn should be created by this file
 require_once("manage_settings.php");
 
+// Open page wrapper container for layout
+echo "<div class='page-wrapper'>";
 
-/*******************************************************
- * ALLOWED SORTING FIELDS (MATCHES YOUR DATABASE COLUMNS)
- *******************************************************/
-
-// Only these columns are allowed for ORDER BY
-// This prevents SQL injection (e.g., someone putting "DROP TABLE")
+// Allowed sort fields whitelist: prevents SQL injection via ORDER BY column injection.
+// Only these exact column names will be accepted.
 $allowedSortFields = [
     'EOInumber', 'jobRef', 'firstName', 'lastName',
     'dob', 'gender', 'streetAddress', 'suburb',
     'state', 'postcode', 'email', 'phone', 'status'
 ];
 
-
-/*******************************************************
- * READ SORTING CHOICES FROM USER (GET PARAMETERS)
- *******************************************************/
-
-// If the user selected a field to sort by, use it
-// Otherwise default to sorting by EOInumber
+// Read sorting parameters from GET; provide defaults if not present
 $sortby = $_GET['sortby'] ?? 'EOInumber';
-
-// If user selected ASC or DESC, use it
-// Otherwise default to ASC
 $order  = $_GET['order'] ?? 'ASC';
 
-
-/*******************************************************
- * VALIDATE THE SORTING FIELD
- *******************************************************/
-
-// If user tries to sort by an invalid column (or hack input),
-// reset to safe default column EOInumber
+// Validate that provided sort column is in the whitelist; if not, fallback to default
 if (!in_array($sortby, $allowedSortFields)) {
     $sortby = 'EOInumber';
 }
 
-
-/*******************************************************
- * VALIDATE SORT ORDER (ASC or DESC ONLY)
- *******************************************************/
-
-// This line ensures only "DESC" is allowed for DESC,
-// and everything else becomes ASC.
-// (Prevents SQL injection and invalid values)
+// Only allow 'DESC' to set descending; anything else becomes 'ASC'
 $order = ($order === 'DESC') ? 'DESC' : 'ASC';
 
-
-/*******************************************************
- * BUILD SQL QUERY WITH SORTING
- *******************************************************/
-
-// Now build the SQL query safely using validated values
-// Example output: SELECT * FROM eoi ORDER BY firstName ASC;
+// Build query using the validated column and order. This is safe because both values were validated.
 $sql = "SELECT * FROM eoi ORDER BY $sortby $order";
-
-
-/*******************************************************
- * EXECUTE SQL QUERY AND FETCH RESULTS
- *******************************************************/
-
 $result = mysqli_query($conn, $sql);
 
-
-// Display Title (shows sorting method)
-echo "<h2>All EOIs (Sorted by $sortby $order)</h2>";
-
 ?>
-
-<!-- =================================================== -->
-<!--   SORTING FORM (Displayed above the results table)  -->
-<!-- =================================================== -->
-
+<!-- Sorting form: GET is used so users can bookmark sorted URLs -->
 <form action="manage_search_all_eoi.php" method="get">
-
-    <!-- Sorting Column Dropdown -->
     <label><strong>Sort by:</strong></label><br>
     <select name="sortby">
         <option value="EOInumber">EOI Number</option>
@@ -107,7 +57,6 @@ echo "<h2>All EOIs (Sorted by $sortby $order)</h2>";
 
     <br><br>
 
-    <!-- Sorting Direction Dropdown -->
     <label><strong>Order:</strong></label><br>
     <select name="order">
         <option value="ASC">Ascending</option>
@@ -122,78 +71,51 @@ echo "<h2>All EOIs (Sorted by $sortby $order)</h2>";
 <br><br>
 
 <?php
-/*******************************************************
- * DISPLAY RESULTS TABLE
- *******************************************************/
-
-// Check if any rows were returned
-if (mysqli_num_rows($result) > 0) {
-
-    // Start HTML table and output column headers
-    echo "<table border='1' cellpadding='5'>
+// If the query returns rows, render them in an HTML table
+if ($result && mysqli_num_rows($result) > 0) {
+    echo "<table class='data-table'>
             <tr>
-                <th>EOI Number</th>
-                <th>Job Ref</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>DOB</th>
-                <th>Gender</th>
-                <th>Street Address</th>
-                <th>Suburb</th>
-                <th>State</th>
-                <th>Postcode</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Skill 1</th>
-                <th>Skill 2</th>
-                <th>Skill 3</th>
-                <th>Skill 4</th>
-                <th>Other Skills</th>
-                <th>Status</th>
+                <th>EOI Number</th><th>Job Ref</th><th>First Name</th><th>Last Name</th>
+                <th>DOB</th><th>Gender</th><th>Street Address</th><th>Suburb</th>
+                <th>State</th><th>Postcode</th><th>Email</th><th>Phone</th>
+                <th>Skill 1</th><th>Skill 2</th><th>Skill 3</th><th>Skill 4</th>
+                <th>Other Skills</th><th>Status</th>
             </tr>";
-
-    // Loop through each returned row and print the data
+    // Reused escaping pattern: htmlspecialchars($row['col'], ENT_QUOTES, 'UTF-8') is applied to every cell
+    // This converts special characters to HTML entities and prevents XSS when printing DB content into HTML.
     while ($row = mysqli_fetch_assoc($result)) {
-
         echo "<tr>
-                <td>{$row['EOInumber']}</td>
-                <td>{$row['jobRef']}</td>
-                <td>{$row['firstName']}</td>
-                <td>{$row['lastName']}</td>
-                <td>{$row['dob']}</td>
-                <td>{$row['gender']}</td>
-                <td>{$row['streetAddress']}</td>
-                <td>{$row['suburb']}</td>
-                <td>{$row['state']}</td>
-                <td>{$row['postcode']}</td>
-                <td>{$row['email']}</td>
-                <td>{$row['phone']}</td>
-                <td>{$row['skill1']}</td>
-                <td>{$row['skill2']}</td>
-                <td>{$row['skill3']}</td>
-                <td>{$row['skill4']}</td>
-                <td>{$row['otherSkills']}</td>
-                <td>{$row['status']}</td>
+                <td>" . htmlspecialchars($row['EOInumber'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['jobRef'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['firstName'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['lastName'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['dob'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['gender'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['streetAddress'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['suburb'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['state'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['postcode'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['email'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['phone'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['skill1'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['skill2'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['skill3'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['skill4'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['otherSkills'], ENT_QUOTES, 'UTF-8') . "</td>
+                <td>" . htmlspecialchars($row['status'], ENT_QUOTES, 'UTF-8') . "</td>
               </tr>";
     }
-
     echo "</table>";
-
 } else {
-    // No EOIs exist in table
-    echo "<p>No EOIs found.</p>";
+   // No records found message
+   echo "<div class='no-results-box'>No EOIs found.</div>" ;
 }
 
+// Link back to management home, close content containers and DB connection
+echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
+echo "</div></div>";
 
-/*******************************************************
- * RETURN BUTTON + FOOTER
- *******************************************************/
-
-echo "<br><br><a href='manage.php' class='return-link'>Return to Home</a><br><br>";
-
-// Close database connection
 mysqli_close($conn);
+echo "</div>"; // close wrapper
 
-// Include footer HTML
-include 'footer.inc';
 ?>

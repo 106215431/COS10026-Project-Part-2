@@ -1,7 +1,6 @@
 <?php
 // ---------------------------------------------------------------------
-// login_manager.php
-// Validates and authenticates manager login credentials
+// login_manager.php with lockout system
 // ---------------------------------------------------------------------
 
 require_once("settings.php");
@@ -10,41 +9,51 @@ if (!$conn) {
     die("<p>Database connection failure.</p>");
 }
 
-// Start session for login persistence
 session_start();
 
-// ---------------------------------------------------------------------
-// Prevent direct URL access (only via POST form submission)
-// ---------------------------------------------------------------------
+// Lockout settings
+$max_attempts = 3;
+$lockout_time = 300; // 5 minutes
+
+// Init session values
+if (!isset($_SESSION['login_attempts'])) {
+    $_SESSION['login_attempts'] = 0;
+}
+if (!isset($_SESSION['lockout_until'])) {
+    $_SESSION['lockout_until'] = 0;
+}
+
+// Check lockout
+if (time() < $_SESSION['lockout_until']) {
+    $remaining = $_SESSION['lockout_until'] - time();
+    die("<!DOCTYPE html><html lang='en'><head>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' href='../styles/styles.css'>
+    <title>Login Failed</title>
+    </head><body>
+    <div class='response-container'>
+        <h2>Login Failed</h2>
+        <div class='error-message'>
+        <p>Manager's website has been disabled.</p>
+            <p>You must wait {$remaining} seconds before trying again.</p>
+        </div>
+        <a href='index.php' class='return-link'>Go Back to Website</a>
+    </div>
+    </body></html>");
+}
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: manager_login_form.php");
     exit();
 }
 
-// ---------------------------------------------------------------------
-// Helper: sanitise input
-// ---------------------------------------------------------------------
 function sanitise_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+    return htmlspecialchars(stripslashes(trim($data)));
 }
 
-// ---------------------------------------------------------------------
-// Collect and sanitise data
-// ---------------------------------------------------------------------
 $username = sanitise_input($_POST["username"] ?? "");
 $password = $_POST["password"] ?? "";
 
-$errors = [];
-
-
-
-
-// ---------------------------------------------------------------------
-// Verify username and password
-// ---------------------------------------------------------------------
 $stmt = mysqli_prepare($conn, "SELECT password FROM managers WHERE username = ?");
 mysqli_stmt_bind_param($stmt, "s", $username);
 mysqli_stmt_execute($stmt);
@@ -55,8 +64,10 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
     mysqli_stmt_fetch($stmt);
 
     if (password_verify($password, $hashedPassword)) {
-        // Correct password — set session and show success
-        $_SESSION["username"] = $username;
+        // Successful login, reset attempts
+        $_SESSION['login_attempts'] = 0;
+        $_SESSION['lockout_until'] = 0;
+        $_SESSION['username'] = $username;
 
         echo "<!DOCTYPE html><html lang='en'><head>
         <meta charset='UTF-8'>
@@ -71,8 +82,29 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
             </div>
         </div>
         </body></html>";
+        exit();
+
     } else {
-        // Invalid password
+        // Wrong password, increase attempts
+        $_SESSION['login_attempts']++;
+
+        if ($_SESSION['login_attempts'] >= $max_attempts) {
+            $_SESSION['lockout_until'] = time() + $lockout_time;
+            die("<!DOCTYPE html><html lang='en'><head>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' href='../styles/styles.css'>
+    <title>Login Failed</title>
+    </head><body>
+    <div class='response-container'>
+        <h2>Login Failed</h2>
+        <div class='error-message'>
+            <p>Too many attempts. Login page has been deactivated to 5 minutes.</p>
+        </div>
+        <a href='index.php' class='return-link'>Go Back to Website</a>
+    </div>
+    </body></html>");
+        }
+
         echo "<!DOCTYPE html><html lang='en'><head>
         <meta charset='UTF-8'>
         <link rel='stylesheet' href='../styles/styles.css'>
@@ -81,12 +113,13 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
         <div class='response-container'>
             <h2>Login Failed</h2>
             <div class='error-message'>
-                <p>Incorrect password. Please try again.</p>
+                <p>Incorrect password. Attempt {$_SESSION['login_attempts']} of {$max_attempts}.</p>
             </div>
             <a href='manager_login_form.php' class='return-link'>Go Back</a>
         </div>
         </body></html>";
     }
+
 } else {
     // Username not found
     echo "<!DOCTYPE html><html lang='en'><head>

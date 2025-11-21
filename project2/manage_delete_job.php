@@ -1,44 +1,80 @@
 <?php
+// Include header (page head, styles) and management navigation UI
 include 'header.inc';
 include 'manage-nav.inc';
-require_once("manage_settings.php");
 
-// Read jobRef from POST parameter
+// Include DB connection/config which provides $conn (mysqli)
+require_once 'manage_settings.php';
+
+// Start page wrapper for consistent layout
+echo "<div class='page-wrapper'>";
+
+echo "<div class='site-content'><div class='container'>";
+// Page title
+echo "<h2 class = 'formname'>Delete EOIs</h2>";
+
+// Enforce POST method so deletes cannot be triggered by visiting a URL (GET)
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    // Notify the user and stop further execution
+    echo "<div class='no-results-box'><p>Please submit the form to delete EOIs.</p></div>";
+    echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
+    echo "</div></div>";
+    include 'footer.inc';
+    exit;
+}
+
+// Retrieve and trim the job reference from POST; default to empty string if not provided
 $jobRef = trim($_POST['jobRef'] ?? '');
 
-// If nothing entered, stop the script
+// Validate input presence
 if ($jobRef === '') {
-    die("Please enter a job reference.");
+    // Prompt for jobRef and exit early
+    echo "<div class='no-results-box'><p>Please enter a job reference.</p></div>";
+    echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
+    echo "</div></div>";
+    include 'footer.inc';
+    exit;
 }
 
-// Prepared delete query
+// Prepare a parameterised DELETE query to avoid SQL injection
 $sql = "DELETE FROM eoi WHERE jobRef = ?";
-
-// Prepare the SQL statement
 $stmt = mysqli_prepare($conn, $sql);
 
-// Bind the jobRef value
-mysqli_stmt_bind_param($stmt, "s", $jobRef);
-
-// Execute deletion
-mysqli_stmt_execute($stmt);
-
-// Count how many rows were removed
-$rows = mysqli_stmt_affected_rows($stmt);
-
-// Display results
-echo "<h2>Delete EOIs</h2>";
-
-// If at least 1 row deleted
-if ($rows > 0) {
-    echo "<p>Successfully deleted <strong>$rows</strong> EOIs for job reference <strong>$jobRef</strong>.</p>";
+// Check prepare success
+if ($stmt === false) {
+    // Basic error output; for production consider logging mysqli_error($conn) instead
+    echo "<div class='no-results-box'><p class='error'>Database error (prepare failed).</p></div>";
 } else {
-    echo "<p>No EOIs found for job reference <strong>$jobRef</strong>. Nothing deleted.</p>";
+    // Bind the jobRef parameter as a string ("s")
+    mysqli_stmt_bind_param($stmt, "s", $jobRef);
+
+    // Execute the prepared DELETE statement
+    mysqli_stmt_execute($stmt);
+
+    // Get the count of deleted rows
+    $rows = mysqli_stmt_affected_rows($stmt);
+
+    // Close statement to free resources
+    mysqli_stmt_close($stmt);
+
+    // Escape jobRef for safe HTML output (prevent XSS)
+    $safeJobRef = htmlspecialchars($jobRef, ENT_QUOTES, 'UTF-8');
+
+    if ($rows > 0) {
+        // Success message: cast rows to int to avoid any formatting/injection issues
+        echo "<div class='no-results-box'><p>Successfully deleted <strong>" . (int)$rows . "</strong> EOIs for job reference <strong>$safeJobRef</strong>.</p></div>";
+    } else {
+         // No rows matched the provided jobRef
+         echo "<div class='no-results-box'>No EOIs have that job references number.</div>";
+    }
 }
 
-// Back link
-echo "<br><br><a href='manage.php' class='return-link'>Return to Home</a>";
+// Return link and close content containers
+echo "<br><a href='manage.php' class='return-link'>Return to Home</a>";
+echo "</div></div>";
 
-// Close connection
+// Close DB connection and wrapper div
 mysqli_close($conn);
+echo "</div>"; // close wrapper
+
 ?>
